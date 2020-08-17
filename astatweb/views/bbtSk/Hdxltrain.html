@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>教学管理一互动训练</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/style.css" media="all">
+</head>
+<body>
+   <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md">
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md12">
+            <div class="layui-card">
+              <div class="layui-col-md6">
+                  <div class="layui-card-header clear layui-form">                    
+                    <div class="layui-row layui-fl selectCon">
+                      <div class="layui-col-md5">
+                        <select lay-verify="" lay-filter="skSelect" lay-search>
+                          <option value="1">本周</option>
+                          <option value="2">本月</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="lable-title layui-fl">有<strong><label id="HdxlCount" ></label></strong>位老师组织了课堂训练</div>
+                  </div>
+                  <div class="layui-card-body">
+                    <div style="width:100%; text-align:center; height:200px; line-height: 200px; font-size:24px; color:#aaa; background:#efefef;" id="Day">占位图</div>
+                    <div class="layui-card-tips">每日组织课堂训练的教师人数</div>
+                  </div>
+              </div>
+              <div class="layui-col-md6">
+                  <div class="layui-card-header clear"></div>
+                  <div class="layui-card-body">
+                    <div style="width:100%; text-align:center; height:200px; line-height: 200px; font-size:24px; color:#aaa; background:#efefef;" id="Day1">占位图</div>
+                    <div class="layui-card-tips">使用互动训练的教师人数占比</div>
+                  </div>
+              </div>
+              <div class="layui-clear"></div>
+            </div>
+          </div>
+          <div class="layui-col-md12">
+            <div class="layui-card">
+
+            <div class="layui-card">
+              <div class="layui-tab layui-tab-brief layadmin-latestData">
+                <ul class="layui-tab-title tab-week tab-weeks layui-fl">
+                  <li class="layui-this" onclick="setBZ()">本周</li>
+                  <li onclick="setBy()">本月</li>
+                  <li onclick="setBxq()">自定义</li>
+                </ul>
+				<div class="timeSel layui-fl">
+				  <span>从</span><input type="text" class="layui-input" readonly='true' id="starttime">
+				  <span>到</span><input type="text" class="layui-input" readonly='true' id="endtime">
+				  
+				</div>
+                <div class="layui-card layui-form" lay-filter="component-form-element">
+                  <div class="lable-title layui-fl">机构教研组：</div>
+                  <div class="layui-row layui-fl selectCon">
+                    <div class="layui-col-md10">
+                      <select id="gtList" name="gtList" lay-verify="">
+                        <option value="">全部</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+				
+                <div class="searchCon layui-fr">
+                  <input id="search" type="text" name="title" placeholder="账号/姓名/手机号" autocomplete="off" class="layui-input">
+                  <button class="layui-btn layui-btn-sm layui-btn-normal" onclick="search()"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                  <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="excl_rep()">导出信息</button>
+                </div>
+
+
+                <div class="layui-clear"></div>
+                <div class="layui-tab-content" style="padding-top:0px;">
+                  <div class="layui-tab-item layui-show">
+                    <table id="tableList" class="layui-table table-center"  lay-filter="test-table-thead1" style="margin-top:0;">
+
+                    </table>                    
+
+                    <!--<div class="table-tips">备课优币获取量=授课包共享优币+被引用次数；授课包共享至学校，每课时15优币；共享至区域，每课时30优币</div>-->
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="../../layuiadmin/js/jquery-1.8.2.js"></script>
+  <script src="../../layuiadmin/layui/layui.js?t=1"></script>
+  <script src="../../layuiadmin/js/commonDate.js"></script>
+  <script src="../../layuiadmin/lib/extend/echarts.js"></script>
+  <script src="../../views/bbtSk/Hdxltrain.js"></script> 
+  
+  <script>
+    layui.config({
+    base: '../../layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use(['index', 'console','form'],function(){
+  	var form =layui.form;
+	
+	form.on('select(skSelect)', function(data){
+		if (data.value == 1) {
+			starttime = getWeekStart(0).split("-").join("");
+		} else {
+			starttime = getMonthStart(0).split("-").join("");	
+		}
+		echartBK();
+	});
+  });
+  </script>
+</body>
+</html>
+

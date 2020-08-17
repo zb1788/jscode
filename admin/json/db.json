@@ -1,0 +1,21 @@
+{
+    "login":{
+        "data":{
+            "username":"admin",
+            "password":"admin",
+            "token":"admin"
+        },
+        "code":200
+    },
+    "getUserInfo":{
+        "data":{
+            "name":"admin",
+            "roles":["admin"]
+        },
+        "code":200
+    },
+    "logout":{
+        "code":200,
+        "data":""
+    }    
+}

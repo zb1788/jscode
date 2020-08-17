@@ -1,0 +1,206 @@
+{
+  "test": {
+    "ques": [],
+    "stage": [
+      { "keypoint": "", "example": "", "thinking": "", "totaltime": "120" }
+    ]
+  },
+  "getQues": {
+    "ques": [
+      {
+        "id": "4668",
+        "genreid": "117",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"2\",\"3\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":2,\"quesContent\":{\"1\":[\"#\",\"\\/\",\"#\"]}}",
+        "voice": "[\"3\",\"fen\",\"1\",\"jia\",\"3\",\"fen\",\"1\"]"
+      },
+      {
+        "id": "4129",
+        "genreid": "105",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"5\",\"4\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":3,\"quesContent\":[\"#\",\"|\",\"#\"]}",
+        "voice": "[\"34\",\"chu\",\"6\"]"
+      },
+      {
+        "id": "2473",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"1\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"0\",\"jia\",\"1\"]"
+      },
+      {
+        "id": "2474",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"1\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"1\",\"jia\",\"0\"]"
+      },
+      {
+        "id": "2475",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"3\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"2\",\"jia\",\"1\"]"
+      },
+      {
+        "id": "2476",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"5\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"2\",\"jia\",\"3\"]"
+      },
+      {
+        "id": "2477",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"4\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"1\",\"jia\",\"3\"]"
+      },
+      {
+        "id": "2478",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"5\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"3\",\"jia\",\"2\"]"
+      },
+      {
+        "id": "2479",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"3\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"1\",\"jia\",\"2\"]"
+      },
+      {
+        "id": "2480",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"5\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"0\",\"jia\",\"5\"]"
+      },
+      {
+        "id": "2481",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"3\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"0\",\"jia\",\"3\"]"
+      },
+      {
+        "id": "2482",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"5\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"4\",\"jia\",\"1\"]"
+      },
+      {
+        "id": "2483",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"4\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"0\",\"jia\",\"4\"]"
+      },
+      {
+        "id": "2484",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"4\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"3\",\"jia\",\"1\"]"
+      },
+      {
+        "id": "2485",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"2\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"1\",\"jia\",\"1\"]"
+      },
+      {
+        "id": "2486",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"5\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"5\",\"jia\",\"0\"]"
+      },
+      {
+        "id": "2487",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"3\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"3\",\"jia\",\"0\"]"
+      },
+      {
+        "id": "2488",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"0\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"0\",\"jia\",\"0\"]"
+      },
+      {
+        "id": "2489",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"4\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"2\",\"jia\",\"2\"]"
+      },
+      {
+        "id": "2490",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"2\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"2\",\"jia\",\"0\"]"
+      },
+      {
+        "id": "2491",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"5\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"1\",\"jia\",\"4\"]"
+      },
+      {
+        "id": "2492",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"4\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"4\",\"jia\",\"0\"]"
+      },
+      {
+        "id": "2493",
+        "genreid": "82",
+        "questype": "2",
+        "content":
+          "{\"answerFlag\":1,\"answer\":[\"2\"],\"quesType\":2,\"quesName\":\"\",\"quesContentType\":1,\"quesContent\":[\"#\"]}",
+        "voice": "[\"0\",\"jia\",\"2\"]"
+      }
+    ],
+    "stage": [
+      {
+        "keypoint":
+          "\u2460\u719f\u8bb05\u4ee5\u5185\u6570\u7684\u7ec4\u6210\uff1b\u24610\u548c\u4efb\u4f55\u6570\u76f8\u52a0\u7ed3\u679c\u4ecd\u5f97\u8fd9\u4e2a\u6570\u3002",
+        "example": "1\uff0b2\uff1d3\uff1b0\uff0b2\uff1d2",
+        "thinking":
+          "1\u548c2\u7ec4\u62103\uff0c\u6240\u4ee51\uff0b2\uff1d3\u3002",
+        "totaltime": "100"
+      }
+    ]
+  }
+}

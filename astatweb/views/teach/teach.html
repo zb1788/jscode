@@ -1,0 +1,509 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>教学管理一</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/style.css" media="all">
+</head>
+<body>
+  
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md">
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md12">
+            <div class="layui-card">
+              <div class="layui-col-md6">
+                  <div class="layui-card-header clear layui-form">                    
+                    <div class="layui-row layui-fl selectCon">
+                      <div class="layui-col-md5">
+                        <select lay-verify="">
+                          <option value="">本周</option>
+                          <option value="010">本月</option>
+                          <option value="021">本季度</option>
+                          <option value="0571">本年</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="lable-title layui-fl">有<strong>56</strong>位老师在线备课</div>
+                  </div>
+                  <div class="layui-card-body">
+                    <div style="width:100%; text-align:center; height:200px; line-height: 200px; font-size:24px; color:#aaa; background:#efefef;">占位图</div>
+                    <div class="layui-card-tips">每日在线备课人数</div>
+                  </div>
+              </div>
+              <div class="layui-col-md6">
+                  <div class="layui-card-header clear"></div>
+                  <div class="layui-card-body">
+                    <div style="width:100%; text-align:center; height:200px; line-height: 200px; font-size:24px; color:#aaa; background:#efefef;">占位图</div>
+                    <div class="layui-card-tips">每日在线备课人数</div>
+                  </div>
+              </div>
+              <div class="layui-clear"></div>
+            </div>
+          </div>
+
+
+
+          <div class="layui-col-md12">
+            <div class="layui-card">
+              <div class=" layui-tab layui-tab-brief layadmin-latestData">
+                <h3 class="toptitle"><a href="#">优币规则</a>班级优币排行榜</h3>
+                <ul class="layui-tab-title tab-week tab-weeks tab-center ">
+                  <li class="layui-this">本周</li>
+                  <li>本月</li>
+                  <li>本学期</li>
+                </ul>
+              </div>
+              <div class="layui-card-body">
+
+
+                <div class="layui-col-xs4">
+                  <table class="layui-table table-clear classTop">
+                    <tbody>
+                      <tr>
+                        <td class="topten"><img src="../../layuiadmin/images/topten1.png"></td>
+                        <td class="userface"><img src="../../layuiadmin/images/face.png">陈梦洁</td>
+                        <td>234</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="layui-col-xs4">
+                  <table class="layui-table table-clear classTop">
+                    <tbody>
+                      <tr>
+                        <td class="topten"><img src="../../layuiadmin/images/topten2.png"></td>
+                        <td class="userface"><img src="../../layuiadmin/images/face.png">陈梦洁</td>
+                        <td>234</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="layui-col-xs4">
+                  <table class="layui-table table-clear classTop">
+                    <tbody>
+                      <tr>
+                        <td class="topten"><img src="../../layuiadmin/images/topten3.png"></td>
+                        <td class="userface"><img src="../../layuiadmin/images/face.png">陈梦洁</td>
+                        <td>234</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="layui-clear"></div>
+              <div class="layui-tab layui-tab-brief" style="margin-top:-10px">                
+                <div class="layui-card layui-form" lay-filter="component-form-element">
+                  <div class="lable-title layui-fl">班级：</div>
+                  <div class="layui-row layui-fl selectCon">
+                    <div class="layui-col-md10">
+                      <select lay-verify="">
+                        <option value="">全部</option>
+                        <option value="010">北京</option>
+                        <option value="021">上海</option>
+                        <option value="0571">杭州</option>
+                      </select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="全部" value="" readonly="" class="layui-input layui-unselect"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">全部</dd><dd lay-value="010" class="">北京</dd><dd lay-value="021" class="">上海</dd><dd lay-value="0571" class="">杭州</dd></dl></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="searchCon layui-fr" id="abId0.4135089520253251">
+                  <input type="text" name="title" placeholder="账号/姓名/手机号" autocomplete="off" class="layui-input">
+                  <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                  <button class="layui-btn layui-btn-sm layui-btn-primary">导出信息</button>
+                </div>
+
+
+                <div class="layui-clear"></div>
+                <div class="layui-tab-content" style="margin-top:-20px;">
+                  <div class="layui-tab-item layui-show">
+                    <table class="layui-table table-center"  lay-filter="test-table-thead1">
+                      <thead>
+                        <tr>
+                          <th>班级</th>
+                          <th>班主任</th>
+                          <th>注册人数</th>
+                          <th>激活人数</th>
+                          <th>激活率</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>                      
+                          <td>一年级（1）班</td>
+                          <td>刘备</td>
+                          <td>56</td>
+                          <td>59</td>
+                          <td>40.7%</td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>                      
+                          <td>一年级（1）班</td>
+                          <td>刘备</td>
+                          <td>56</td>
+                          <td>59</td>
+                          <td>40.7%</td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>                      
+                          <td>一年级（1）班</td>
+                          <td>刘备</td>
+                          <td>56</td>
+                          <td>59</td>
+                          <td>40.7%</td>
+                        </tr>
+                      </tbody>
+                    </table>  
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="layui-col-md12">
+            <div class="layui-card">
+              <div class="layui-card-header"><div class="layui-fr fc-gray">注：注册人数为开通账号人数，激活人数为已经登录平台的用户</div>学生开通情况概述</div>
+              <div class="layui-card-body">
+
+                <div class="layui-col-xs4">
+                  <div class="roundCon zc">951<span>注册人数</span></div>
+                </div>
+                <div class="layui-col-xs4">
+                  <div class="roundCon jh">564<span>激活人数</span></div>
+                </div>
+                <div class="layui-col-xs4">
+                  <div class="roundCon jhl">59.3<small>%</small><span>激活率</span></div>
+                </div>
+
+                <table class="layui-table table-center"  lay-filter="test-table-thead1">
+                  <thead>
+                    <tr>
+                      <th>班级</th>
+                      <th>班主任</th>
+                      <th>注册人数</th>
+                      <th>激活人数</th>
+                      <th>激活率</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>                      
+                      <td>一年级（1）班</td>
+                      <td>刘备</td>
+                      <td>56</td>
+                      <td>59</td>
+                      <td>40.7%</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>                      
+                      <td>一年级（1）班</td>
+                      <td>刘备</td>
+                      <td>56</td>
+                      <td>59</td>
+                      <td>40.7%</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>                      
+                      <td>一年级（1）班</td>
+                      <td>刘备</td>
+                      <td>56</td>
+                      <td>59</td>
+                      <td>40.7%</td>
+                    </tr>
+                  </tbody>
+                </table>
+             
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="layui-col-md12">
+            <div class="layui-card">
+              <div class="layui-card-header">他们正在备这些课程</div>
+
+                <div class="classTag">
+                  <p></p>
+                  <div class="tagcloud layui-fl">
+                    <a class="fs1" href="#">奇妙的身体</a>
+                    <a class="fs2"  href="#">有理数的加法</a>
+                    <a class="fs3"  href="#">机器人</a>
+                    <a class="fs4"  href="#">区块链</a>
+                    <a class="fs5"  href="#">科技创新</a>
+                  </div>
+                  <div class="tagcloud layui-fr">
+                    <a href="#">大数据时代</a>
+                    <a href="#">一带一路</a>
+                    <a href="#">智能控制</a>
+                    <a href="#">人工智能神经网络</a>
+                    <a href="#">计算机科学</a>
+                  </div>
+                </div>
+
+            </div>
+            <div class="layui-card">
+              <div class="layui-tab layui-tab-brief layadmin-latestData">
+                <ul class="layui-tab-title tab-week tab-weeks layui-fl">
+                  <li class="layui-this">本周</li>
+                  <li>本月</li>
+                  <li>本学期</li>
+                </ul>
+                <div class="layui-card layui-form" lay-filter="component-form-element">
+                  <div class="lable-title layui-fl">机构教研组：</div>
+                  <div class="layui-row layui-fl selectCon">
+                    <div class="layui-col-md10">
+                      <select lay-verify="">
+                        <option value="">全部</option>
+                        <option value="010">北京</option>
+                        <option value="021">上海</option>
+                        <option value="0571">杭州</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="searchCon layui-fr">
+                  <input type="text" name="title" placeholder="账号/姓名/手机号" autocomplete="off" class="layui-input">
+                  <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                  <button class="layui-btn layui-btn-sm layui-btn-primary">导出信息</button>
+                </div>
+
+
+                <div class="layui-clear"></div>
+                <div class="layui-tab-content" style="padding-top:0px;">
+                  <div class="layui-tab-item layui-show">
+                    <table class="layui-table table-center"  lay-filter="test-table-thead1" style="margin-top:0;">
+                      <thead>
+                      <tr>
+                        <th rowspan="2">序号</th>
+                        <th rowspan="2">姓名</th>
+                        <th rowspan="2"><span>备课优币获取量</span><span class="layui-table-sort layui-inline"><i class="layui-edge layui-table-sort-asc" title="升序"></i><i class="layui-edge layui-table-sort-desc" title="降序"></i></span></th>
+                        <th rowspan="2">浏览资源量</th>
+                        <th rowspan="2">上传资源量</th>
+                        <th rowspan="2"><span>共享授课包</span><span class="layui-table-sort layui-inline"><i class="layui-edge layui-table-sort-asc" title="升序"></i><i class="layui-edge layui-table-sort-desc" title="降序"></i></span></th>
+                        <th rowspan="2"><span>被引用次数</span><span class="layui-table-sort layui-inline"><i class="layui-edge layui-table-sort-asc" title="升序"></i><i class="layui-edge layui-table-sort-desc" title="降序"></i></span></th>
+                        <th rowspan="2"><span>云盘使用容量（M）</span><span class="layui-table-sort layui-inline"><i class="layui-edge layui-table-sort-asc" title="升序"></i><i class="layui-edge layui-table-sort-desc" title="降序"></i></span></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>                      
+                        <td>1</td>
+                        <td>陈梦洁</td>
+                        <td>125</td>
+                        <td>100</td>
+                        <td>75</td>
+                        <td>98</td>
+                        <td>86</td>
+                        <td>860</td>
+                      </tr>
+                      </tbody>
+                      <tbody>
+                      <tr>                      
+                        <td>1</td>
+                        <td>陈梦洁</td>
+                        <td>125</td>
+                        <td>100</td>
+                        <td>75</td>
+                        <td>98</td>
+                        <td>86</td>
+                        <td>860</td>
+                      </tr>
+                      </tbody>
+                      <tbody>
+                      <tr>                      
+                        <td>1</td>
+                        <td>陈梦洁</td>
+                        <td>125</td>
+                        <td>100</td>
+                        <td>75</td>
+                        <td>98</td>
+                        <td>86</td>
+                        <td>860</td>
+                      </tr>
+                      </tbody>
+                    </table>                    
+                    <div class="layui-table-page table-clear">
+                      <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
+                        <a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0"><i class="layui-icon"></i></a>
+                        <span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span>
+                        <a href="javascript:;" data-page="2">2</a>
+                        <a href="javascript:;" data-page="3">3</a>
+                        <span class="layui-laypage-spr">…</span>
+                        <a href="javascript:;" class="layui-laypage-last" title="尾页" data-page="10">10</a>
+                        <a href="javascript:;" class="layui-laypage-next" data-page="2"><i class="layui-icon"></i></a>
+                        <span class="layui-laypage-skip">到第<input type="text" min="1" value="1" class="layui-input">页<button type="button" class="layui-laypage-btn">确定</button></span>
+                        <span class="layui-laypage-count">共 100 条</span><span class="layui-laypage-limits"><select lay-ignore=""><option value="10" selected="">10 条/页</option><option value="20">20 条/页</option><option value="30">30 条/页</option><option value="40">40 条/页</option><option value="50">50 条/页</option><option value="60">60 条/页</option><option value="70">70 条/页</option><option value="80">80 条/页</option><option value="90">90 条/页</option></select>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="table-tips">备课优币获取量=授课包共享优币+被引用次数；授课包共享至学校，每课时15优币；共享至区域，每课时30优币</div>
+                  </div>
+                  <div class="layui-tab-item">
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 双表头表格 -->
+            <div class="layui-card">
+              <div class="layui-tab layui-tab-brief layadmin-latestData">
+                <ul class="layui-tab-title tab-week tab-weeks layui-fl">
+                  <li class="layui-this">表扬老师</li>
+                </ul>
+                <div class="layui-card layui-form" lay-filter="component-form-element">
+                  <div class="lable-title layui-fl">机构教研组：</div>
+                  <div class="layui-row layui-fl selectCon">
+                    <div class="layui-col-md10">
+                      <select lay-verify="">
+                        <option value="">全部</option>
+                        <option value="010">北京</option>
+                        <option value="021">上海</option>
+                        <option value="0571">杭州</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeSel layui-fl">
+                  <span>从</span><input type="text" name="title"  autocomplete="off" class="layui-input"><span>至</span><input type="text" name="title"  autocomplete="off" class="layui-input">
+
+                </div>
+                <div class="searchCon layui-fr">
+                  <input type="text" name="title" placeholder="账号/姓名/手机号" autocomplete="off" class="layui-input">
+                  <button class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                  <button class="layui-btn layui-btn-sm layui-btn-primary">导出信息</button>
+                </div>
+
+
+                <div class="layui-clear"></div>
+                <div class="layui-tab-content" style="padding-top:0px;">
+                  <div class="layui-tab-item layui-show">
+                    <table class="layui-table table-center"  lay-filter="test-table-thead1" style="margin-top:0px;">
+                      <thead>
+                        <tr>
+                          <th colspan="3">总概况</th>
+                          <th colspan="2">备课获得优币数</th>
+                          <th colspan="2">授课获得优币数</th>
+                          <th colspan="2">作业获得优币数</th>
+                          <th colspan="2">师生互动获得优币数</th>
+                          <th rowspan="1">其他</th>
+                        </tr>
+                        <tr>
+                          <th>排名</th>
+                          <th>用户姓名</th>
+                          <th>优币值</th>
+                          <th>登录</th>
+                          <th>共享授课包</th>
+                          <th>登录</th>
+                          <th>互动答题</th>
+                          <th>布置作业</th>
+                          <th>作业评优</th>
+                          <th>推荐及表扬</th>
+                          <th>自主学习</th>
+                          <th>其他</th>
+                        </tr>
+
+                      </thead>
+                      <tbody>
+                        <tr>                      
+                          <td>1</td>
+                          <td>陈梦洁</td>
+                          <td>564</td>
+                          <td>30</td>
+                          <td>154</td>
+                          <td>987</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>                      
+                          <td>1</td>
+                          <td>陈梦洁</td>
+                          <td>564</td>
+                          <td>30</td>
+                          <td>154</td>
+                          <td>987</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>                      
+                          <td>1</td>
+                          <td>陈梦洁</td>
+                          <td>564</td>
+                          <td>30</td>
+                          <td>154</td>
+                          <td>987</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                        </tr>
+                      </tbody>
+                    </table>                   
+                    <div class="layui-table-page table-clear">
+                      <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
+                        <a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0"><i class="layui-icon"></i></a>
+                        <span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span>
+                        <a href="javascript:;" data-page="2">2</a>
+                        <a href="javascript:;" data-page="3">3</a>
+                        <span class="layui-laypage-spr">…</span>
+                        <a href="javascript:;" class="layui-laypage-last" title="尾页" data-page="10">10</a>
+                        <a href="javascript:;" class="layui-laypage-next" data-page="2"><i class="layui-icon"></i></a>
+                        <span class="layui-laypage-skip">到第<input type="text" min="1" value="1" class="layui-input">页<button type="button" class="layui-laypage-btn">确定</button></span>
+                        <span class="layui-laypage-count">共 100 条</span><span class="layui-laypage-limits"><select lay-ignore=""><option value="10" selected="">10 条/页</option><option value="20">20 条/页</option><option value="30">30 条/页</option><option value="40">40 条/页</option><option value="50">50 条/页</option><option value="60">60 条/页</option><option value="70">70 条/页</option><option value="80">80 条/页</option><option value="90">90 条/页</option></select>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="table-tips">备课优币获取量=授课包共享优币+被引用次数；授课包共享至学校，每课时15优币；共享至区域，每课时30优币</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../../layuiadmin/layui/layui.js?t=1"></script>
+  <script src="../../layuiadmin/js/tagcloud.js"></script> 
+  <script>
+  layui.config({
+    base: '../../layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use(['index', 'console']);
+  </script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>教学管理一</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="./layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="./layuiadmin/style/style.css" media="all">
+</head>
+<body>
+  
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md">
+        <div class="layui-row layui-col-space15">       
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                      <span class="layui-breadcrumb" lay-separator=">">
+
+                      </span>
+                    </div>
+                    <div class="layui-card-body">
+                        <form class="layui-form">
+                            <div class="layui-form-item">
+                                <div class="layui-input-inline add-select" style="border:solid 1px #efefef;display: none;" id="areaSelectDiv">
+                                  <select name="quiz1" lay-filter="areaFilter" id="areaSelect">
+
+                                  </select>
+                                </div>
+                                <div class="layui-input-inline add-select" style="border:solid 1px #efefef;width:70px;">
+                                    <select name="quiz1" lay-filter="usertypeFilter" id="userSelect">
+                                      <option value="2" selected="">教师</option>
+                                      <option value="4">学生</option>
+                                      <option value="5">家长</option>
+                                    </select>
+                                  </div>                                
+                              </div>                
+                            </form>
+                    </div>
+                    <div class="fc-gray" style="padding-left: 18px;">注：注册人数为开通账号人数，激活人数为已经登录平台的用户</div>
+                    <div class="layui-card-body">
+      
+                      <div class="layui-col-xs4">
+                        <div class="roundCon zc"><font id="zcrs"></font><span>注册人数</span></div>
+                      </div>
+                      <div class="layui-col-xs4">
+                        <div class="roundCon jh"><font id="jhrs"></font><span>激活人数</span></div>
+                      </div>
+                      <div class="layui-col-xs4">
+                        <div class="roundCon jhl"><font id="jhl"></font><small style="display: none;">%</small><span>激活率</span></div>
+                      </div>
+                      <div class="searchCon layui-fr">
+                        <input type="text" name="title" id="areaName" placeholder="名称" autocomplete="off" class="layui-input">
+                        <button class="layui-btn layui-btn-sm layui-btn-normal" onclick="searchData()"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="outExcel()">导出信息</button>
+                      </div>
+      
+      
+                      <div class="layui-clear"></div>
+                      <table class="layui-table table-center"  id="tableList">
+                      </table>
+                      <div id="demo7"></div>   
+                      <table class="layui-hide" id="demo8" lay-filter="test"></table>
+                    </div>
+                </div>
+              </div>
+          <!-- 表格 -->
+          <div class="layui-col-md12">
+
+          </div>
+          <!-- 表格结束-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="./js/common.js"></script>
+  <script src="./layui/layui.js?t=1"></script>  
+  <script src="./js/jquery.min.js?t=1"></script>
+  <script>
+  $.ajaxSetup({async:false});
+
+
+
+  layui.config({
+      base: './layui/' //此处路径请自行处理, 可以使用绝对路径
+  }).extend({
+      excel:'excel'
+  });
+  // var formSelects;
+  var table;
+  var laypage;
+  var tableData = [];
+  var excelData = [];
+  var menuHtml = '';
+  var area_level = 0;//点的个数：2为市，3为区 
+  var area_id = GetQueryString('areaCode');
+  if(area_id == null || area_id == ''){
+    alert('区域id参数异常，请联系管理员！');
+  }else{
+    if(!area_id.endWith('.')){
+      area_id = area_id + '.';
+    }    
+  }
+  area_level = (area_id.split('.')).length - 1;
+  var baseName = '';
+
+  var managerType = GetQueryString('managerType');//1市管理员 2区管理员
+  if(managerType == null){
+    managerType = '';
+  } 
+
+  if(area_level == 2){
+    baseName = '区域';
+    if(managerType == ''){
+      managerType = 1;
+    }  
+    menuHtml = '<a><cite>市开通统计</cite></a>';
+  }else{
+    //区信息展示
+    baseName = '学校';
+    if(managerType == ''){
+      managerType = 2;
+    }
+    if(managerType == 1){
+      //市管理员
+      var tmpArr = area_id.split('.');
+      getAreaListById(tmpArr[0]+'.'+tmpArr[1]+'.');      
+      $('#areaSelectDiv').show();
+      menuHtml = '<a href="javascript:history.go(-1);">市开通统计</a><a><cite>区开通统计</cite></a>';      
+    }else{
+      //区管理员
+      menuHtml = '<a><cite>区开通统计</cite></a>';      
+    }    
+  }
+  $('.layui-breadcrumb').html(menuHtml);
+  $('#areaName').attr('placeholder',baseName+'名称');
+
+  var userType = GetQueryString('userType');//2教师4学生5家长
+  if(userType == null || userType == ''){
+    userType = 2;    
+  }
+  $("#userSelect").val(userType);
+
+
+  getOpenStatInfo();
+  getOpenStatList('');
+
+
+
+
+  layui.use(['laypage', 'layer','form', 'table','element'], function(){
+    laypage = layui.laypage
+    var layer = layui.layer
+    table = layui.table;
+    var element = layui.element;
+    var form = layui.form;
+
+    initTable();
+
+    form.on('select(areaFilter)', function(data){
+      //console.log(data.elem); //得到select原始DOM对象
+      console.log(data.value); //得到被选中的值
+      //console.log(data.othis); //得到美化后的DOM对象
+      
+      //页面跳转
+      window.location.href = 'teach.html?areaCode='+data.value+'&managerType='+managerType+'&userType='+userType;
+    });
+
+
+    form.on('select(usertypeFilter)', function(data){
+      //console.log(data.elem); //得到select原始DOM对象
+      console.log(data.value); //得到被选中的值
+      //console.log(data.othis); //得到美化后的DOM对象     
+      userType = data.value; 
+      //页面跳转
+      window.location.href = 'teach.html?areaCode='+area_id+'&userType='+data.value+'&managerType='+managerType;
+    });
+
+  })
+  
+
+function initTable(){
+  var clsArr = [{field:'order',title:'序号',align:'center',width:80},
+              {field:'title',title:baseName+'名称',align:'center'},
+              {field:'registerNum',title:'注册人数',align:'center',sort:true},
+              {field:'activeNum',title:'激活人数',align:'center',sort:true},
+              {field:'activeRate',title:'激活率',align:'center',sort:true},
+            ];
+  if(managerType == 1 && area_level == 2){
+    //市管理员
+    clsArr.push({field:'option',title:'操作',align:'center',sort:false,templet:function(d){return '<button onclick=goInfo("'+d.areaId+'") class="layui-btn layui-btn-sm layui-btn-normal">详情</button>'}});
+  }
+
+  table.render({
+      elem: '#tableList'      
+      ,cols:[clsArr]
+      ,data:tableData
+      ,page:true
+      ,limit:10
+    });  
+}
+
+
+function searchData(){
+  var name = $('#areaName').val();
+  if(name == ''){
+    // layer.alert('名称不能为空！');
+    // return false;
+  }
+  getOpenStatList(name);
+  initTable();
+}
+
+//获取区域列表
+function getAreaListById(area_id_inner){
+    var url = furl + warName +'/getAreaListById?area_id='+area_id_inner;
+    $.get(url,function(data){
+      $.each(data,function(k,v){
+        if(v.AREA_ID == area_id){          
+          $('#areaSelect').append('<option selected = "selected" value="'+v.AREA_ID+'">'+v.AREA_NAME+'</option>');
+        }else{
+          $('#areaSelect').append('<option value="'+v.AREA_ID+'">'+v.AREA_NAME+'</option>');
+        }        
+      })
+      setTimeout(function(){layui.form.render("select");},500);
+    })
+}
+
+
+
+//获取注册，登录，激活人数
+function getOpenStatInfo(){
+  var url = furl + warName +'/getOpenStatInfo?area_id='+area_id+'&usertype='+userType;
+  $.get(url,function(data){
+    $('#zcrs').html(data.REGISTER_NUMBER);
+    $('#jhrs').html(data.ACTIVE_NUMBER);
+    $('#jhl').html(data.ACTIVE_RATE);
+  })
+}
+
+//获取各区域/学校的开通统计情况table
+function getOpenStatList(name){
+  var url = furl + warName +'/getOpenStatList?area_id='+area_id+'&usertype='+userType;
+  if(name != ''){
+    if(area_level == 2){
+      var url = furl + warName +'/getOpenStatList?area_id='+area_id+'&usertype='+userType+'&area_name='+name;
+    }else if(area_level == 3){
+      var url = furl + warName +'/getOpenStatList?area_id='+area_id+'&usertype='+userType+'&school_name='+name;
+    }    
+  }
+  excelData = [];
+  tableData = [];
+  $.get(url,function(data){
+    var arr = [];    
+    excelData.push({'order':'序号','title':'名称','registerNum':'注册人数','activeNum':'激活人数','activeRate':'激活率','areaId':'区域'});
+    $.each(data,function(k,v){
+      var obj = {};
+      obj.order = k+1;
+      obj.title = v.TITLE;
+      obj.registerNum = v.REGISTER_NUMBER;
+      obj.activeNum = v.ACTIVE_NUMBER;
+      obj.activeRate = v.ACTIVE_RATE;
+      obj.areaId = v.ID;
+      tableData.push(obj);      
+      excelData.push(obj);
+    });
+    
+  })
+  
+}
+function outExcel(){
+  console.log(excelData);
+  // excelData.push({'order':'序号','title':'名称','registerNum':'注册人数','activeNum':'激活人数','activeRate':'激活率','areaId':'区域'});
+  // excelData.push({'order':'11','title':'的发生的发生法','registerNum':1313,'activeNum':111,'activeRate':'24%','areaId':'13.11'});
+  // excelData.push({'order':'11','title':'的发生的发生法','registerNum':1313,'activeNum':111,'activeRate':'24%','areaId':'13.11'});
+  // excelData.push({'order':'11','title':'的发生的发生法','registerNum':1313,'activeNum':111,'activeRate':'24%','areaId':'13.11'});
+
+//   table.exportFile(['名字','性别','年龄'], [
+//   ['张三','男','20'],
+//   ['李四','女','18'],
+//   ['王五','女','19']
+// ], 'csv');
+  layui.use(['excel'], function() {
+				var excel = layui.excel;
+        excelData = excel.filterExportData(excelData, {
+          order: function(value) {
+          return {
+            v: value,
+            s: {
+              alignment: {
+                horizontal: 'left',
+                vertical: 'center'
+              }
+            }
+          }
+        },
+        title:'title',
+        registerNum: function(value) {
+          return {
+            v: value,
+            s: {
+              alignment: {
+                horizontal: 'left',
+                vertical: 'center'
+              }
+            }
+          }
+        },
+        activeNum: function(value) {
+          return {
+            v: value,
+            s: {
+              alignment: {
+                horizontal: 'left',
+                vertical: 'center'
+              }
+            }
+          }
+        },                
+        activeRate:'activeRate',})
+        var colConfig = excel.makeColConfig({
+          'B': 200       
+        }, 80);
+        var rowConfig = excel.makeRowConfig({
+				  1: 1000			  
+			  }, 40);
+				// 如果数据量特别大，最好直接传入 AOA 数组，减少内存/CPU消耗
+        excel.exportExcel({
+						sheet1: excelData
+					}, '导出数据' + new Date().toLocaleString() + '.xlsx', 'xlsx',{
+          extend: {
+            '!cols': colConfig,
+            //'!rows': rowConfig
+          }
+        });
+	});
+}
+
+//进入区详情
+function goInfo(id){
+  window.location.href = 'teach.html?areaCode='+id+'&managerType='+managerType+'&userType='+userType;
+}
+
+function GetQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return decodeURIComponent(decodeURIComponent(unescape(r[2])));
+  return null;
+}
+  </script>
+
+<style>
+    .add-select .layui-select-title .layui-input{border-style: none!important;}
+    .add-select .layui-select-title .layui-edge{    border-top-color: #1e9fff;}
+  </style>
+
+
+
+</body>
+</html>
+

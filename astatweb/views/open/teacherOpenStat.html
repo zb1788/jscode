@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>开通统计一教师开通统计</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/style.css" media="all">
+</head>
+<body>
+
+	<div class="layui-col-md12">
+	<div class="layui-card">
+	  <div class="layui-card-header"><div class="layui-fr fc-gray">注：注册人数为开通账号人数，激活人数为已经登录平台的用户</div>教师开通情况概述</div>
+	  <div class="layui-card-body">
+
+		<div class="layui-col-xs4">
+		  <div class="roundCon zc"><div id="zc"></div><span>注册人数</span></div>
+		</div>
+		<div class="layui-col-xs4">
+		  <div class="roundCon jh"><div id="jh"></div><span>激活人数</span></div>
+		</div>
+		<div class="layui-col-xs4">
+		  <div class="roundCon jhl"><div id="jhl"></div><span>激活率</span></div>
+		</div>
+
+		<table id="tableList" class="layui-table table-center"  lay-filter="test-table-thead1">
+
+		</table>
+	 
+
+	  </div>
+	</div>
+
+  </div>
+  <script src="../../layuiadmin/js/jquery-1.8.2.js"></script>
+  <script src="../../layuiadmin/layui/layui.js?t=1"></script>
+  <script src="../../layuiadmin/js/commonDate.js"></script>
+  <script src="../../views/open/teacherOpenStat.js"></script> 
+  
+  <script>
+    layui.config({
+    base: '../../layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use(['index', 'console','form'],function(){
+  	var form =layui.form;
+  });
+  </script>
+</body>
+</html>
+

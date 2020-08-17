@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>开通统计一班级开通统计详情</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/style.css" media="all">
+</head>
+<body>
+
+	<div class="layui-col-md12">
+		<div class="layui-card">
+		  <div class="layui-tab layui-tab-brief layadmin-latestData">
+		  
+			<div class="layui-card layui-form" lay-filter="component-form-element">
+			  <div class="lable-title layui-fl">激活情况：</div>
+			  <div class="layui-row layui-fl selectCon">
+				<div class="layui-col-md10">
+				  <select id="jhqkList" name="jhqkList" lay-verify="" lay-filter="jhqkList" >
+					<option value="">全部</option>
+					<option value="0">已激活</option>
+					<option value="1">未激活</option>
+				  </select>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="searchCon layui-fr">
+			  <input id="search" type="text" name="title" placeholder="账号/姓名/手机号" autocomplete="off" class="layui-input">
+			  <button class="layui-btn layui-btn-sm layui-btn-normal" onclick="search()"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+			  <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="excl_rep()">导出信息</button>
+			</div>
+
+
+			<div class="layui-clear"></div>
+			<div class="layui-tab-content" style="padding-top:0px;">
+			  <div class="layui-tab-item layui-show">
+				<table id="tableList" class="layui-table table-center"  lay-filter="test-table-thead1" style="margin-top:0;">
+
+				</table>                    
+
+				<!--<div class="table-tips">备课优币获取量=授课包共享优币+被引用次数；授课包共享至学校，每课时15优币；共享至区域，每课时30优币</div>-->
+			  </div>
+
+			</div>
+		  </div>
+		</div>
+	</div>
+
+  </div>
+  <script src="../../layuiadmin/js/jquery-1.8.2.js"></script>
+  <script src="../../layuiadmin/layui/layui.js?t=1"></script>
+  <script src="../../layuiadmin/js/commonDate.js"></script>
+  <script src="../../views/open/classOpenDetail.js"></script> 
+  
+  <script>
+    layui.config({
+    base: '../../layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use(['index', 'console','form'],function(){
+  	var form =layui.form;
+	form.on('select(jhqkList)', function(data){
+	  search();
+	}); 
+  });
+  </script>
+</body>
+</html>
+

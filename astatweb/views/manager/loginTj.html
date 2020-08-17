@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>登录统计</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="./layui/formselect/formSelects-v4.css" media="all">
+  <link rel="stylesheet" href="./layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="./layuiadmin/style/style.css" media="all">
+</head>
+<body>
+  
+  <div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md">
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                  <span class="layui-breadcrumb" lay-separator=">">
+
+                  </span>
+                </div>
+                <div class="layui-card-body">
+                    <form class="layui-form">
+                        <div class="layui-form-item">
+                            <div class="layui-input-inline add-select" style="border:solid 1px #efefef;display: none;" id="areaSelectDiv">
+                                <select name="quiz1" lay-filter="areaFilter" id="areaSelect">
+
+                                </select>
+                              </div>                      
+                            <div class="layui-input-inline add-select" style="border:solid 1px #efefef;width:70px;">
+                                <select name="quiz1" lay-filter="usertypeFilter" id="userSelect">
+                                  <option value="2" selected="">教师</option>
+                                  <option value="4">学生</option>
+                                  <option value="5">家长</option>
+                                </select>
+                            </div>                            
+                          </div>                
+                        </form>
+                </div>
+            </div>
+          </div>
+          <!-- 图表 -->
+          <div class="layui-col-md12">
+              <div class="layui-card">
+                  <div class="layui-tab layui-tab-brief layadmin-latestData">
+                      <ul class="layui-tab-title tab-week tab-weeks layui-fl">
+                          <li class="layui-this" >本月</li>
+                          <li>上月</li>
+                      </ul>
+
+
+                      <div class="layui-clear"></div>
+                      <div class="layui-tab-content" style="padding-top:0px;">
+                          <div class="layui-tab-item layui-show">
+                              <div class="layui-row layui-col-space10">
+                                  <div class="layui-col-md9">
+                                      <div class="layui-row">
+  
+                                        <div class="tab-week tab-weeks layui-fl" >
+                                          <div class="layui-form">
+                                              <div class="layui-form-item">
+                                                <div class="layui-fl" style="line-height: 40px; padding:10px;"><font class="areaNameFromTj"></font>有<span id="loginNum">0</span>位<font class="userName"></font>登录平台</div>
+                                                <div class="layui-inline line-chart">
+                                                    <label class="layui-form-label" id="selectName">区县</label>
+                                                    <div class="layui-input-inline" style="display: 350px;">
+                                                        <select name="city" xm-select="select1" xm-select-max="4" xm-select-height="36px" xm-select-search="" xm-select-skin="normal">
+                                            
+                                                        </select>
+                                                    </div>     
+                                                </div>
+                                                <div class="layui-inline line-chart"><div class="layui-form-item" style="margin-top: 12px;"><button class="layui-btn layui-btn-sm layui-btn-normal" onclick="getLoginStatDayListDiy(1)">查询</button></div></div>                                                                                           
+                                              </div>                                            
+                                          </div>                
+                                        </div>
+                                        
+                                      </div>
+                                        <div class="layui-card-body clear-pad" id="byLoginChart" style="height:320px"></div>
+                                    </div>
+                                  <div class="layui-col-md3" style="border-left: solid 5px #f2f2f2;padding-left:5px;">
+                                      <div class="layui-card-body clear-pad" id="byLoginPieChart" style="height:360px"></div>
+                                  </div>
+                              </div>                              
+                          </div>
+                          <div class="layui-tab-item">
+                              <div class="layui-row layui-col-space10">
+                                  <div class="layui-col-md9">
+                                    <div class="layui-row">
+
+                                      <div class="tab-week tab-weeks layui-fl" >
+                                        <div class="layui-form">
+                                            <div class="layui-form-item">                                              
+                                              <div class="layui-fl" style="line-height: 40px; padding:10px;"><font class="areaNameFromTj"></font>有<span class id="loginNumLast">0</span>位<font class="userName"></font>登录平台</div>
+                                              <div class="layui-inline line-chart">
+                                                  <label class="layui-form-label" id="selectNameLast">区县</label>
+                                                  <div class="layui-input-inline" style="display: 350px;">
+                                                      <select name="city" xm-select="select2" xm-select-max="4" xm-select-height="36px" xm-select-search="" xm-select-skin="normal">
+                                          
+                                                      </select>
+                                                  </div>     
+                                              </div>
+                                              <div class="layui-inline line-chart"><div class="layui-form-item" style="margin-top: 12px;"><button class="layui-btn layui-btn-sm layui-btn-normal" onclick="getLoginStatDayListDiy(2)">查询</button></div></div>                                              
+                                            </div>                                            
+                                        </div>                
+                                      </div>
+                                      
+                                    </div>
+                                      <div class="layui-card-body clear-pad" id="byLoginChartLast" style="height:320px"></div>
+                                  </div>
+                                  <div class="layui-col-md3" style="border-left: solid 5px #f2f2f2;padding-left:5px;">
+                                      <div class="layui-card-body clear-pad" id="byLoginPieChartLast" style="height:360px"></div>
+                                  </div>
+                              </div>    
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- 表格 -->
+          <div class="layui-col-md12">
+            <div class="layui-card">
+              <div class="layui-tab layui-tab-brief layadmin-latestData">
+                <ul class="layui-tab-title tab-week tab-weeks layui-fl excel">
+                  <li class="layui-this">本月</li>
+                  <li>自定义</li>
+                </ul>
+                <div class="searchCon layui-fr" id="abId0.4135089520253251">                                        
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" onclick="outExcel()">导出信息</button>
+                </div>
+
+                <div class="layui-clear"></div>
+                <div class="layui-tab-content" style="padding-top:0px;">
+                  <div class="layui-tab-item layui-show">
+                    <table class="layui-table table-center"  id="tableList"></table>                    
+                  </div>
+                  <div class="layui-tab-item">
+                      <div class="layui-card layui-form" lay-filter="component-form-element">
+                          <div class="timeSel layui-fl">
+                              <span>从</span>
+                              <input type="text" name="start" id="start" lay-verify="date"  placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                              <span>至</span>
+                              <input type="text" name="end" id="end" lay-verify="date"  placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                              <input type="text" name="title" id="areaname" placeholder="区域名称" autocomplete="off" class="layui-input">
+                              <button class="layui-btn layui-btn-sm layui-btn-normal" onclick="getLoginStatList(2)"><i class="layui-icon layui-icon-search"></i> 搜索</button>
+                          </div>
+                      </div>
+                      <table class="layui-table table-center"  id="tableListLast">
+                      </table>   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./js/common.js"></script>
+  <script src="./layui/layui.js?t=1"></script>
+  <script src="./js/jquery.min.js?t=1"></script>
+  <script src="./js/echarts.js" ></script>
+  <script>  
+var now = new Date();
+var year = now.getFullYear();
+var month = now.getMonth()+1;
+if(month<10){
+  month = "0"+month;
+}
+
+var d = new Date(year,month,0);
+var days = d.getDate();
+
+var lastDays;
+var lastYear = year;
+var lastMonth;
+if(month == '01'){
+  lastMonth = 12;
+  lastYear = year-1;
+}else{
+  lastMonth = month*1-1;
+  if(lastMonth < 10){
+    lastMonth = "0"+lastMonth;
+  }
+}
+var d = new Date(lastYear,lastMonth,0);
+lastDays = d.getDate();
+
+var menuHtml = '';
+var baseName = '区域';
+var area_level = 2;//点的个数：2为市，3为区 
+var managerType = GetQueryString('managerType');//1市管理员 2区管理员
+if(managerType == null){
+  managerType = '';
+}  
+
+var area_id = GetQueryString('areaCode');
+if(area_id == null || area_id == ''){
+    alert('区域id参数异常，请联系管理员！');
+}else{
+  if(!area_id.endWith('.')){
+      area_id = area_id + '.';
+    }    
+}
+area_level = (area_id.split('.')).length - 1;
+
+
+if(area_level == 2){
+    if(managerType == ''){
+      managerType = 1;
+    }
+    $('#selectName').html("区县");  
+    $('#selectNameLast').html("区县");  
+    
+    $('#areaname').attr('placeholder','区域名称');
+
+    menuHtml = '<a><cite>市登录统计</cite></a>';    
+  }else{
+    //区信息展示
+    if(managerType == ''){
+      managerType = 2;
+    }
+    baseName = '学校';
+    $('#selectName').html("学校");
+    $('#selectNameLast').html("学校");  
+    $('#areaname').attr('placeholder','学校名称');
+    if(managerType == 1){
+      var tmpArr = area_id.split('.');
+      getAreaListById(tmpArr[0]+'.'+tmpArr[1]+'.');      
+      $('#areaSelectDiv').show();
+      menuHtml = '<a href="javascript:history.go(-1);">市登录统计</a><a><cite>区登录统计</cite></a>';  
+    }else{
+      menuHtml = '<a><cite>区登录统计</cite></a>';
+    }    
+  }
+  $('.layui-breadcrumb').html(menuHtml);
+
+
+var userType = GetQueryString('userType');
+if(userType == null || userType == ''){
+  userType = 2;
+}
+$("#userSelect").val(userType);
+getUserName();
+
+var table;
+var tableData;
+var excelData = [];
+var tableDataLast = [];//自定义表格数据
+var excelDataLast = [];//自定义EXCEL数据
+var starttime = '';//自定义的开始结束时间
+var endtime = '';//自定义的开始结束时间
+
+
+getAreaName();
+
+//获取本月线图
+var tchartsLine = echarts.init(document.getElementById("byLoginChart"));
+setTimeout(function(){getLoginStatDayList(1,tchartsLine,area_id);},300)
+
+tchartsLine.on('legendselectchanged', function (params) {
+    console.log(params);    
+    if(params.selected['全部']){
+      //tchartsLine.setOption({selected:{'市辖区':false,'瑶海区':true},}) 
+    }
+    //
+});
+//获取上月线图
+$("#byLoginChartLast").css("width",$("#byLoginChart").width());
+var tchartsLineLast = echarts.init(document.getElementById("byLoginChartLast"));
+setTimeout(function(){getLoginStatDayList(2,tchartsLineLast,area_id);},300)
+
+//获取本月饼图
+var tchartsPie = echarts.init(document.getElementById("byLoginPieChart"));
+setTimeout(function(){getLoginStatInfo(1,tchartsPie);},300)
+
+$("#byLoginPieChartLast").css("width",$("#byLoginPieChart").width());
+//获取上月饼图
+var tchartsPieLast = echarts.init(document.getElementById("byLoginPieChartLast"));
+setTimeout(function(){getLoginStatInfo(2,tchartsPieLast);},300)
+
+
+//获取登录表格信息
+setTimeout(function(){getLoginStatList(1);},300)
+
+
+
+var formSelects;
+layui.config({
+    base: './layui/formselect/' //此处路径请自行处理, 可以使用绝对路径
+}).extend({
+    formSelects: 'formSelects-v4',
+    excel:'../excel'
+});
+
+
+layui.use(['layer', 'table','form','formSelects','element','laydate'], function(){
+    var layer = layui.layer;
+    table = layui.table;
+    var element = layui.element;
+    var laydate = layui.laydate;
+    var form = layui.form;
+    formSelects = layui.formSelects;
+
+    
+    var areaArr = [];
+    //获取区域列表
+    if(area_level == 2){
+      //市
+      var url = furl + warName +'/getAreaListById?area_id='+area_id;
+      $.get(url,function(data){
+        var arr = [];
+        arr.push({'name':'全部','value':'0'});
+        $.each(data,function(k,v){
+          arr.push({'name':v.AREA_NAME,'value':v.AREA_ID});
+          areaArr.push(v.AREA_ID);
+        })
+
+        formSelects.data('select1', 'local', {
+            arr: arr
+        });
+        formSelects.value('select1', ['0']);      
+
+        formSelects.data('select2', 'local', {
+            arr: arr
+        });
+        formSelects.value('select2', ['0']);             
+      })
+    }else{
+      //区
+      var url = furl + warName +'/getSchoolListById?area_id='+area_id;
+      $.get(url,function(data){
+        var arr = [];
+        arr.push({'name':'全部','value':'0'});
+        $.each(data,function(k,v){
+          arr.push({'name':v.SCHOOL_NAME,'value':v.SCHOOL_ID});
+          areaArr.push(v.SCHOOL_ID);
+        })
+
+        formSelects.data('select1', 'local', {
+            arr: arr
+        });
+        formSelects.value('select1', ['0']);      
+
+
+        formSelects.data('select2', 'local', {
+            arr: arr
+        });
+        formSelects.value('select2', ['0']);               
+      })    
+    }
+    
+
+
+    formSelects.on('select1', function(id, vals, val, isAdd, isDisabled){
+        //id:           点击select的id
+        //vals:         当前select已选中的值
+        //val:          当前select点击的值
+        //isAdd:        当前操作选中or取消
+        //isDisabled:   当前选项是否是disabled
+        
+        //如果return false, 那么将取消本次操作
+        console.log(val)
+        console.log(isAdd)
+        if(val.value == '0'){
+          if(isAdd){
+            //全选选中的话，其他地区都取消
+            formSelects.value('select1', areaArr, false);
+          }else{
+            //全选没有选中，如果其他区域没有选中的就选中第一个
+            var length = formSelects.value('select1', 'val').length;
+            console.log(length);
+            if(length==1){
+              //至少选择一个区域 
+              var selectArr = [];
+              selectArr.push(areaArr[0]);
+              formSelects.value('select1',selectArr , true);
+            }
+          }
+        }else{
+          if(isAdd){
+            formSelects.value('select1', ['0'], false);
+          }else{
+            var length = formSelects.value('select1', 'val').length;
+            console.log(length);
+            if(length==1){
+              formSelects.value('select1', ['0'], true);
+            }
+          }
+        }
+        //return false;   
+    });
+
+
+    formSelects.on('select2', function(id, vals, val, isAdd, isDisabled){
+        //id:           点击select的id
+        //vals:         当前select已选中的值
+        //val:          当前select点击的值
+        //isAdd:        当前操作选中or取消
+        //isDisabled:   当前选项是否是disabled
+        
+        //如果return false, 那么将取消本次操作
+        console.log(val)
+        console.log(isAdd)
+        if(val.value == '0'){
+          if(isAdd){
+            //全选选中的话，其他地区都取消
+            formSelects.value('select2', areaArr, false);
+          }else{
+            //全选没有选中，如果其他区域没有选中的就选中第一个
+            var length = formSelects.value('select2', 'val').length;
+            console.log(length);
+            if(length==1){
+              //至少选择一个区域 
+              var selectArr = [];
+              selectArr.push(areaArr[0]);
+              formSelects.value('select2',selectArr , true);
+            }
+          }
+        }else{
+          if(isAdd){
+            formSelects.value('select2', ['0'], false);
+          }else{
+            var length = formSelects.value('select2', 'val').length;
+            console.log(length);
+            if(length==1){
+              formSelects.value('select2', ['0'], true);
+            }
+          }
+        }
+        //return false;   
+    });
+    
+    
+    formSelects.btns([]);
+    //多选下拉框的个数提示
+    formSelects.maxTips(function(id, vals, val, max){
+      console.log(vals)
+      console.log(val)
+      layer.alert('最多选择'+max+'项');
+   
+    });
+    //多选下拉框的关闭事件
+    formSelects.closed( function(id){
+        console.log('合上了');
+
+    });
+    initTable();
+    initTableLast();
+
+    form.on('select(areaFilter)', function(data){
+      //console.log(data.elem); //得到select原始DOM对象
+      console.log(data.value); //得到被选中的值
+      //console.log(data.othis); //得到美化后的DOM对象
+      
+      window.location.href = 'loginTj.html?areaCode='+data.value+'&managerType='+managerType+'&userType='+userType;
+    });
+
+
+    //用户类型选择
+    form.on('select(usertypeFilter)', function(data){
+      //console.log(data.elem); //得到select原始DOM对象
+      console.log(data.value); //得到被选中的值
+      //console.log(data.othis); //得到美化后的DOM对象
+      userType = data.value;
+      getUserName();
+      window.location.href = 'loginTj.html?areaCode='+area_id+'&userType='+data.value+'&managerType='+managerType;
+    });
+
+    //日期选择框
+    laydate.render({
+      elem: '#start'
+      ,format: 'yyyyMMdd' //可任意组合
+      ,done: function(value, date){
+        // layer.alert('你选择的日期是：' + value + '<br>获得的对象是' + JSON.stringify(date));
+        starttime = value;
+      }      
+    });
+    laydate.render({
+      elem: '#end'
+      ,format: 'yyyyMMdd' //可任意组合
+      ,done: function(value, date){
+        // layer.alert('你选择的日期是：' + value + '<br>获得的对象是' + JSON.stringify(date));
+        endtime = value;
+      }        
+    });
+})
+
+
+
+function getAreaName(){
+  var url = furl + warName +'/getAreaFullNameById?area_id='+area_id;
+  $.get(url,function(data){
+    $('.areaNameFromTj').html(data.AREA_NAME);
+  })
+}
+
+function getUserName(){
+  if(userType == 2){
+  $('.userName').html("教师");
+}else if(userType == 4){
+  $('.userName').html("学生");
+}else if(userType == 5){
+  $('.userName').html("家长");
+}
+}
+
+//type 1本月 2上月
+function showView(type){
+  if(type == 1){
+    $('#loginNum').show();
+    $('#loginNumLast').hide();
+  }else{
+    $('#loginNum').hide();
+    $('#loginNumLast').show();
+  }
+}
+
+//获取下拉框选择的多个区县生成图标
+function getLoginStatDayListDiy(type){
+  if(type == 1){
+    //本月
+    var area_ids = formSelects.value('select1', 'valStr');
+    if(area_ids == 0){
+      area_ids = area_id;
+    }
+    getLoginStatDayList(type,tchartsLine,area_ids);
+  }else{
+    //上月
+    var area_ids = formSelects.value('select2', 'valStr');
+    if(area_ids == 0){
+      area_ids = area_id;
+    }
+    getLoginStatDayList(type,tchartsLineLast,area_ids);
+  }
+  
+}
+
+//获取每天各个区的数据
+function getLoginStatDayList(type,tcharts,area_ids){
+  if(type == 1){
+    var starttime = year+''+month+'01';
+    var endtime = year+''+month+''+days;
+  }else{
+    var starttime = lastYear+''+lastMonth+'01';
+    var endtime = lastYear+''+lastMonth+''+lastDays;
+  }
+  var url = furl + warName +'/getLoginStatDayList?area_id='+area_ids+'&level='+area_level+'&usertype='+userType+'&starttime='+starttime+'&endtime='+endtime;
+  $.get(url,function(data){
+    var legendData = [];
+    var xdata = [];
+    var sdata = [];
+    xdata = data.DATA;    
+    var totalData = [];//全部
+    $.each(data.LIST,function(k,v){
+      var obj = {};
+      obj.name = v.NAME;
+      obj.type = 'line';
+      obj.stack = '总量';
+      obj.data = v.DATA;
+      sdata.push(obj);
+      legendData.push(v.NAME);
+    });    
+
+    //sdata.push({'name':'全部','type':'line','stack':'总量','data':''});
+    drawLineChart(legendData,xdata,sdata,"",tcharts);
+  })
+}
+
+
+
+
+//获取登录和未登录人数(type 1本月 2上月)
+function getLoginStatInfo(type,tcharts){
+  if(type == 1){
+    var starttime = year+''+month+'01';
+    var endtime = year+''+month+''+days;
+  }else{
+    var starttime = lastYear+''+lastMonth+'01';
+    var endtime = lastYear+''+lastMonth+''+lastDays;
+  }
+  var url = furl + warName +'/getLoginStatInfo?area_id='+area_id+'&usertype='+userType+'&starttime='+starttime+'&endtime='+endtime;
+  $.get(url,function(data){
+    if(type == 1){
+      $('#loginNum').html(data.LOGIN_NUMBER);
+    }else{
+      $('#loginNumLast').html(data.LOGIN_NUMBER);     
+    }    
+    drawPieChart(data.LOGIN_NUMBER,data.UN_LOGIN_NUMBER,"",tcharts)
+  })
+}
+
+
+//获取区域登录详情 1 本月 2自定义
+function getLoginStatList(type){
+  if(type == 1){
+    var starttimeLimit = year+''+month+'01';
+    var endtimeLimit = year+''+month+days;
+    var name = '';
+  }else{
+    var starttimeLimit = starttime;
+    var endtimeLimit = endtime;
+    var name = $('#areaname').val();
+  }
+  if(starttimeLimit == ''){
+    layer.alert('开始时间不能为空！');
+    return false;
+  }
+
+  if(endtimeLimit == ''){
+    layer.alert('结束时间不能为空！');
+    return false;
+  }
+
+    
+  var url = furl + warName +'/getLoginStatList?area_id='+area_id+'&usertype='+userType+'&starttime='+starttimeLimit+'&endtime='+endtimeLimit;
+  if(name != ''){
+    if(area_level == 2){
+      var url = furl + warName +'/getLoginStatList?area_id='+area_id+'&usertype='+userType+'&starttime='+starttimeLimit+'&endtime='+endtimeLimit+'&area_name='+name;
+    }else if(area_level == 3){
+      var url = furl + warName +'/getLoginStatList?area_id='+area_id+'&usertype='+userType+'&starttime='+starttimeLimit+'&endtime='+endtimeLimit+'&school_name='+name;
+    }else if(area_level == 3){
+      var url = furl + warName +'/getLoginStatList?area_id='+area_id+'&usertype='+userType+'&starttime='+starttimeLimit+'&endtime='+endtimeLimit+'&school_name='+name;
+    }
+  }
+
+  
+  $.get(url,function(data){
+    if(type == 1){
+      //本月
+      tableData = []
+      excelData = []
+    }else{
+      tableDataLast = []
+      excelDataLast = []
+    }    
+
+    excelData.push({'order':'序号','title':baseName+'名称','loginNum':'登录人数','loginTime':'登录人次','onlineTime':'在线时长（分）'});
+    excelDataLast.push({'order':'序号','title':baseName+'名称','loginNum':'登录人数','loginTime':'登录人次','onlineTime':'在线时长（分）'});
+    $.each(data,function(k,v){
+      var obj = {};
+      obj.order = k +1;
+      obj.title = v.TITLE;
+      obj.loginNum = v.LOGIN_NUMBER;
+      obj.loginTime = v.LOGIN_TIMES;
+      obj.onlineTime = v.ONLINE_TIME;
+      obj.id = v.ID;
+
+      if(type == 1){
+        //本月
+        tableData.push(obj);
+        excelData.push(obj);
+      }else{
+        tableDataLast.push(obj);
+        excelDataLast.push(obj);
+      }      
+    });
+
+    if(type == 1){
+      table.reload('tableList',{
+        elem: '#tableList'      
+        ,data:tableData
+      })
+    }else{
+      table.reload('tableListLast',{
+        elem: '#tableListLast'      
+        ,data:tableDataLast
+      })
+    }    
+  })
+}
+
+
+function initTable(){
+  var clsArr = [{field:'order',title:'序号',align:'center',width:80},
+              {field:'title',title:baseName+'名称',align:'center'},
+              {field:'loginNum',title:'登录人数',align:'center',sort:true},
+              {field:'loginTime',title:'登录人次',align:'center',sort:true},
+              {field:'onlineTime',title:'在线时长（分）',align:'center',sort:true},
+            ];
+
+  clsArr.push({field:'option',title:'操作',align:'center',sort:false,templet:function(d){return '<button onclick=goInfo("'+d.id+'") class="layui-btn layui-btn-sm layui-btn-normal">详情</button>'}});
+
+  table.render({
+      elem: '#tableList'      
+      ,cols:[clsArr]
+      ,data:tableData
+      ,page:true
+      ,limit:10
+    });  
+}
+
+function initTableLast(){
+  var clsArr = [{field:'order',title:'序号',align:'center',width:80},
+              {field:'title',title:baseName+'名称',align:'center'},
+              {field:'loginNum',title:'登录人数',align:'center',sort:true},
+              {field:'loginTime',title:'登录人次',align:'center',sort:true},
+              {field:'onlineTime',title:'在线时长（分）',align:'center',sort:true},
+            ];
+
+  clsArr.push({field:'option',title:'操作',align:'center',sort:false,templet:function(d){return '<button onclick=goInfo("'+d.id+'") class="layui-btn layui-btn-sm layui-btn-normal">详情</button>'}});
+
+  table.render({
+      elem: '#tableListLast'      
+      ,cols:[clsArr]
+      ,data:tableDataLast
+      ,page:true
+      ,limit:10
+    });  
+}
+
+//获取区域列表
+function getAreaListById(area_id_inner){
+    var url = furl + warName +'/getAreaListById?area_id='+area_id_inner;
+    $.get(url,function(data){
+      $.each(data,function(k,v){
+        if(v.AREA_ID == area_id){          
+          $('#areaSelect').append('<option selected = "selected" value="'+v.AREA_ID+'">'+v.AREA_NAME+'</option>');
+        }else{
+          $('#areaSelect').append('<option value="'+v.AREA_ID+'">'+v.AREA_NAME+'</option>');
+        }        
+      })
+      setTimeout(function(){layui.form.render("select");},500);      
+    })
+}
+
+
+//导出excel
+function outExcel(){
+  if($('.excel').children('li').eq(0).hasClass('layui-this')){
+    var excelDataBase = excelData;
+  }else{
+    var excelDataBase = excelDataLast;
+  }
+    
+  console.log(excelDataBase);
+
+  layui.use(['excel'], function() {
+				var excel = layui.excel;
+        excelDataBase = excel.filterExportData(excelDataBase, {
+          order: function(value) {
+          return {
+            v: value,
+            s: {
+              alignment: {
+                horizontal: 'left',
+                vertical: 'center'
+              }
+            }
+          }
+        },
+        title:'title',
+        loginNum: function(value) {
+          return {
+            v: value,
+            s: {
+              alignment: {
+                horizontal: 'left',
+                vertical: 'center'
+              }
+            }
+          }
+        },
+        loginTime: function(value) {
+          return {
+            v: value,
+            s: {
+              alignment: {
+                horizontal: 'left',
+                vertical: 'center'
+              }
+            }
+          }
+        }, 
+        onlineTime: function(value) {
+          return {
+            v: value,
+            s: {
+              alignment: {
+                horizontal: 'left',
+                vertical: 'center'
+              }
+            }
+          }
+        }                                      
+        })
+        var colConfig = excel.makeColConfig({
+          'B': 200       
+        }, 80);
+        var rowConfig = excel.makeRowConfig({
+				  1: 1000			  
+			  }, 40);
+				// 如果数据量特别大，最好直接传入 AOA 数组，减少内存/CPU消耗
+        excel.exportExcel({
+						sheet1: excelDataBase
+					}, '导出数据' + new Date().toLocaleString() + '.xlsx', 'xlsx',{
+          extend: {
+            '!cols': colConfig,
+            //'!rows': rowConfig
+          }
+        });
+	});
+}
+
+
+//进入区详情
+function goInfo(id){
+  if(area_level == 2){
+    window.location.href = 'loginTj.html?areaCode='+id+'&managerType='+managerType+'&userType='+userType;
+  }else if(area_level == 3){
+    window.location.href = 'loginUserTj.html?areaCode='+area_id+'&managerType='+managerType+'&schoolId='+id+'&userType='+userType;
+  }
+  
+}
+
+
+//获取指定月份的天数
+function getDays(year,month) {
+  var stratDate = new Date(year,month-1,1);
+  var endData = new Date(year,month,1);
+  var days = (endData -stratDate)/(1000*60*60*24);
+  return days;
+}
+
+function GetQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return decodeURIComponent(decodeURIComponent(unescape(r[2])));
+  return null;
+}
+  </script>
+  <script type="text/javascript" src="./js/echarts.js" ></script>
+  <script>
+
+
+
+
+function drawLineChart(legendData,xdata,sdata,title,tcharts){
+  option = {
+    title: {
+        text: ''
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    toolbox:{
+      show: false,
+      feature:{
+        saveAsImage:{
+          show: false
+        }
+      }
+    },
+    legend: {
+        //selected:{'市辖区':false,'瑶海区':true},
+        data:legendData
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: xdata
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: sdata   
+  };
+  tcharts.setOption(option, true);
+}  
+function drawPieChart(loginNum,unLoginNum,title,tcharts){
+  option = {
+    title: {
+            text: '',
+            subtext: '',
+            // x 设置水平安放位置，默认左对齐，可选值：'center' ¦ 'left' ¦ 'right' ¦ {number}（x坐标，单位px）
+            x: 'left',
+            // y 设置垂直安放位置，默认全图顶端，可选值：'top' ¦ 'bottom' ¦ 'center' ¦ {number}（y坐标，单位px）
+            y: 'top',
+            // itemGap设置主副标题纵向间隔，单位px，默认为10，
+            itemGap: 30,
+            //backgroundColor: '#EEE',
+            // 主标题文本样式设置
+            textStyle: {
+              fontSize: 26,
+              fontWeight: 'bolder',
+              color: '#000080'
+            },
+            // 副标题文本样式设置
+            subtextStyle: {
+              fontSize: 18,
+              color: '#8B2323'
+            }
+          },
+          tooltip : {
+              trigger: 'item',
+              formatter: "{a} <br/>{b} : {c} ({d}%)"
+          },
+          legend: {
+            // orient 设置布局方式，默认水平布局，可选值：'horizontal'（水平） ¦ 'vertical'（垂直）
+            orient: 'vertical',
+            // x 设置水平安放位置，默认全图居中，可选值：'center' ¦ 'left' ¦ 'right' ¦ {number}（x坐标，单位px）
+            x: 'left',
+            // y 设置垂直安放位置，默认全图顶端，可选值：'top' ¦ 'bottom' ¦ 'center' ¦ {number}（y坐标，单位px）
+            y: 'top',
+            itemWidth: 24,   // 设置图例图形的宽
+            itemHeight: 18,  // 设置图例图形的高
+            textStyle: {
+              color: '#666'  // 图例文字颜色
+            },
+            // itemGap设置各个item之间的间隔，单位px，默认为10，横向布局时为水平间隔，纵向布局时为纵向间隔
+            itemGap: 10,
+            backgroundColor: '#eee',  // 设置整个图例区域背景颜色            
+            data: ['登录人数','未登录人数']
+          },
+          series: [
+            {
+              name: '登录统计：',
+              type: 'pie',
+              // radius: '50%',  // 设置饼状图大小，100%时，最大直径=整个图形的min(宽，高)
+              radius: '50%',  // 设置环形饼状图， 第一个百分数设置内圈大小，第二个百分数设置外圈大小
+              center: ['65%', '50%'],  // 设置饼状图位置，第一个百分数调水平位置，第二个百分数调垂直位置
+              data:[
+                {value:loginNum, name:'登录人数'},
+                {value:unLoginNum, name:'未登录人数'}
+              ],
+              // itemStyle 设置饼状图扇形区域样式
+              itemStyle: {
+                // emphasis：英文意思是 强调;着重;（轮廓、图形等的）鲜明;突出，重读
+                // emphasis：设置鼠标放到哪一块扇形上面的时候，扇形样式、阴影
+                emphasis: {
+                  shadowBlur: 10,
+                  shadowOffsetX: 0,
+                  shadowColor: 'rgba(30, 144, 255，0.5)'
+                }
+              },
+              // 设置值域的那指向线
+              labelLine: {
+                normal: {
+                  show: false   // show设置线是否显示，默认为true，可选值：true ¦ false
+                }
+              },
+              // 设置值域的标签
+              label: {
+                normal: {
+                  position: 'inner',  // 设置标签位置，默认在饼状图外 可选值：'outer' ¦ 'inner（饼状图上）'
+                  // formatter: '{a} {b} : {c}个 ({d}%)'   设置标签显示内容 ，默认显示{b}
+                  // {a}指series.name  {b}指series.data的name
+                  // {c}指series.data的value  {d}%指这一部分占总数的百分比
+                  formatter: '{c}'
+                }
+              }
+            }
+          ]
+  }
+  tcharts.setOption(option, true);
+}
+  </script>
+
+<style>
+	.add-select .layui-select-title .layui-input{border-style: none!important;}
+	.add-select .layui-select-title .layui-edge{    border-top-color: #1e9fff;}
+</style>
+  
+
+</body>
+</html>
+
