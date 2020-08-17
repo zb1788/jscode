@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VCom JavaScript SDK Demo</title>
+	<style type="text/css">
+	#content{
+		width: 600px;
+		height: 400px;
+		overflow: auto;
+		font-size: 12px;
+		background: #eee;
+		padding: 5px 10px;
+		margin-bottom: 5px;
+		border: 1px solid #888;
+		box-sizing: border-box;
+		font-family: "微软雅黑";
+		word-wrap: break-word;
+	}
+	#message{
+		width: 600px;
+		padding: 3px;
+		font-size: 12px;
+		font-family: "微软雅黑";
+		box-sizing: border-box;
+	}
+	#api{
+		display: none;
+	}
+	</style>
+</head>
+<body onload="__VAE__.clickEvent();">
+	<div id="content"></div>
+	<input id="close" type="button" value="断开">
+	<iframe id="api" name="api" frameborder="0"></iframe>
+	<body>
+    <div>测试失败</div>
+    <a class="__VCOM_ANALYTICS_CLICK" btnf="btn003">测试成功一</a>
+    <button class="__VCOM_ANALYTICS_CLICK" btnf="btn001">测试成功二</button>
+    <div class="__VCOM_ANALYTICS_CLICK" __VCOM_ANALYTICS="VCOM_TQMS_ZY002">测试成功三</div>
+    
+</body>
+
+	<script src="https://test.yjt361.com/node/vfsapi/pv/bp/vcom-analytics-sdk.js"></script>
+	<script type="text/JavaScript">
+	
+		var __VAE__ = window.__VAE__;
+		__VAE__.setPlatform("web");
+		__VAE__.pageView();
+
+	</script>
+</body>
+</html>
