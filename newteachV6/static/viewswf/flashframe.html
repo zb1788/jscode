@@ -1,0 +1,129 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>customtree.html</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<meta http-equiv="content-type" content="text/html; charset=gbk">
+		<link rel="stylesheet" id="ext-all-css" type="text/css"
+			href="ext/ext-all.css" />
+		<script type="text/javascript" id="ext-base-js"
+			src="ext/ext-base.js"></script>
+		<script type="text/javascript" id="ext-all-js"
+			src="ext/ext-all.js"></script>
+		<script type="text/javascript" src="ext/tree.js" defer="defer"></script>
+		<script src="jquery-1.11.1.min.js"></script>
+        <script src="jquery-migrate-1.2.1.js" type="text/javascript" ></script>
+		<script type="text/javascript" src="singleFlash.js"></script>
+		<!--  <script src="/mobile/js/json2.js" type="text/javascript"></script>-->
+         <script src="ajax_common.js" type="text/javascript"></script>
+         
+         <script type="text/javascript" src="swfobject.js"></script>
+       <script type="text/javascript">
+       var swfVersionStr = "11.1.0";
+		var xiSwfUrlStr = "playerProductInstall.swf";
+		var mainflashpath="FlexPaperApp.swf";
+		//var patrn=/<%=new KnowledgeStructureList().getSysParamByName("pls.flash.special")%>/g;  
+			//alert(patrn);
+			//alert("1");
+			var batchDownloadUrl='https://plszz.zzedu.net.cn/youjiao/doMutiplePlay.do?jsoncallback=?';	
+			var global_basePath='https://plszz.zzedu.net.cn/';
+			var rcode="20140124090822863548639371593";
+			var resType="1";
+			var userName="41019900010002";
+			// if(resType=="1")
+			// {
+			// 	loadPlaySwf(rcode);
+			// }
+			// else if(resType=="4")
+			// {
+			// loadPlaySwfSID(rcode);
+			// }
+			// else
+			// {
+			
+			// }
+			
+
+
+			 var url="http://rss1zz.zzedu.net.cn:9000/material/20190315/20190315104746502656746247014/%E6%8F%90%E9%AB%98%E8%AE%AD%E7%BB%83%EF%BC%9A%E4%B8%A4%E4%BD%8D%E6%95%B0%E5%87%8F%E4%B8%80%E4%BD%8D%E6%95%B0%EF%BC%88%E9%80%80%E4%BD%8D%EF%BC%89.swf?rcode=c15f153d4c9a4dd4c959ff099410d45c7b20adc97e4c20c1c42493002ee4ed7f&validate_code=223afb7b42a64b5880bae8490af23032&username=00226&flashtype=%E8%94%BA%E9%87%91%E6%A2%85&ad=0022620190516160537_0&st=vod&ct=0&CLIENTIP=218.28.20.138";
+			 showFlexPager2(url);
+		</script>
+	</head>
+
+	<body>
+	    <div id="center" >
+		 <div id="flashContent" style="visibility:hidden">
+				 <p>
+				      没有安装flashPlayer或者FlashPlayer版本太低。 
+				      </p>
+					<p>请下载新的flashPlayer:<a target="_blank" href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+		 </div>
+		 
+		</div>
+		<div id="east">
+			<ul  id="flashList" >
+
+			</ul>
+		</div>
+		<script type="text/javascript">
+			//var patrn=/<%=new KnowledgeStructureList().getSysParamByName("pls.flash.special")%>/g;  
+			
+		</script>
+		<script type="text/javascript">
+			Ext.BLANK_IMAGE_URL = 'ext/resources/images/s.gif';
+			Ext.onReady(function(){
+			var west=new Ext.Panel({
+			        region:"east",
+			        width:200,
+			        minSize:10,
+			        maxSize:500,
+			        split:true,        
+			        collapsible: true,
+			        title:"播放FLASH列表",
+			        layout:'fit',
+			        margins:'0 0 0 0',
+			        items:new Ext.BoxComponent({
+							el: 'east',
+							height:'100%'
+						}),
+			        collapsed:true
+			    });
+				_center=new Ext.Panel({
+						region:'center',
+			            title: null,
+			            collapsible: true,
+			            split:true,
+			            width: 225,
+			            minSize: 175,
+			            maxSize: 300,
+			            layout:'fit',
+			            margins:'0 0 0 0',
+			            items:new Ext.BoxComponent({
+							el: 'center',
+							height:'100%'
+						})    
+				});
+				var viewport = new Ext.Viewport({
+					layout:"border",
+					padding : 5,
+					listeners:{
+						'afterlayout':function(c,l){
+							try{
+								l.east.collapsedEl.createChild({
+									html:'<div style="writing-mode:tb-rl;text-align:center;padding-right: 3px;padding-top: 200px;font-size:12px;">单击箭头展开列表</div>'
+								});
+								c.removeListener('afterlayout',arguments.callee);
+							}catch(e){}
+						}
+					},
+					items:[_center,west]
+				});
+			});
+			function showViewPort()
+			{	
+			
+	    }
+		</script>
+	</body>
+</html>

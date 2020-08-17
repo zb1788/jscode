@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>课堂报告</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0.0580658784%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#28C9B1" offset="0%"></stop>
+            <stop stop-color="#A3D4FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="课堂报告" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(13.000000, 17.500000)">
+            <path d="M5,146.5 L5,14.5 C5,8.9771525 9.4771525,4.5 15,4.5 L15,4.5 L135,4.5 C140.522847,4.5 145,8.9771525 145,14.5 L145,137" id="路径" stroke="#303030" stroke-width="10"></path>
+            <path d="M5,145 C5,153.284271 11.7157288,160 20,160 C28.2842712,160 35,153.284271 35,145 C35,139.581757 32.1272258,134.834486 27.8217435,132.198254" id="路径" stroke="#303030" stroke-width="10"></path>
+            <path d="M156,160 L156,160 C164.284271,160 171,153.731986 171,146 C171,138.268014 164.284271,132 156,132" id="路径" stroke="#303030" stroke-width="10"></path>
+            <path d="M27,127 L156,127 L156,137 L27,137 C24.2385763,137 22,134.761424 22,132 L22,132 C22,129.238576 24.2385763,127 27,127 Z" id="矩形" fill="#303030"></path>
+            <path d="M21,155 L156,155 L156,165 L21,165 C18.2385763,165 16,162.761424 16,160 L16,160 C16,157.238576 18.2385763,155 21,155 Z" id="矩形复制" fill="#303030"></path>
+            <g id="编组-2" transform="translate(19.000000, 72.000000)" fill="#303030">
+                <rect id="矩形复制-2" x="0" y="0" width="70" height="10" rx="5"></rect>
+                <rect id="矩形复制-4" x="82" y="0" width="30" height="10" rx="5"></rect>
+                <rect id="矩形复制-3" x="0" y="26" width="112" height="10" rx="5"></rect>
+            </g>
+            <path d="M95,5 L95,42.267072 L110,35.517072 L125,42.267072 L125,5 L95,5 Z" id="矩形" stroke="#303030" stroke-width="10" fill="url(#linearGradient-1)"></path>
+        </g>
+    </g>
+</svg>

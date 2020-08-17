@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+html{overflow-y:scroll;overflow-x:hidden; }
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
+table,td,tr,th{font-size:14px;}
+ol,ul,li{list-style:none;}
+li{list-style-type:none;}
+img{vertical-align: middle; border: 0;}
+h1,h2,h3,h4,h5,h6{font-size:14px; font-weight:normal;}
+input,select,textarea {font-size:14px; color:#555; vertical-align:middle; font-family:Microsoft YaHei;}
+button{cursor:pointer; border:none;}
+em {font-style:normal;}
+
+/* Common  */
+body {margin:0; padding:0; font-size:14px; color:#555; font-family:Microsoft YaHei;}
+a,a.visited {blr:expression(this.onFocus=this.blur());outline:none;text-decoration:none; color:#555;}
+a:hover{text-decoration:underline;}
+
+a.hong:link,a.hong:visited {text-decoration:none;color:#da0000;}
+a.hong:hover {text-decoration:underline;}
+a.blue,a.blue:visited {color:#168acc;text-decoration:none;}
+a.blue:hover {color:#f60;text-decoration:underline;}
+a.yellow,a.yellow:visited {color:#f90;text-decoration:none;}
+a.yellow:hover {color:#f60;text-decoration:underline;}
+
+/*清除float*/
+.clearfix:after {content: ".";  display:block;  height:0;  clear: both;  visibility: hidden;}
+.clearfix {display:inline-block;}
+* html .clearfix {height:0; }
+.clearfix {display: block; clear:both; height:0;}
+.clearfix {}
+
+
+.w980 {width:980px; margin:0 auto;}
+.w1200 {width:1200px; margin:0 auto;}
+.w1920 {width:1920px; margin:0 auto;}
+.mt15 { margin-top:15px;}
+.borT {border-top:1px solid #efefef !important;}
+.mt0 {margin-top:0 !important;}
+.fl {float:left;}
+.fr {float:right;}
+.redFon {color:#f60 !important; padding:0 5px; font-family:Arial, Microsoft YaHei;}
+.redFon2 {color:#f60; font-family:Arial, Microsoft YaHei; padding:0 2px;}
+.blackFon {color:#777;}
+.posRe {position:relative; z-index:999;}
+
+.tcell{ display:inline-table;-webkit-display:table-cell;
+-moz-display:table-cell;
+-ms-display:table-cell;
+-o-display:table-cell;}
+
+
+

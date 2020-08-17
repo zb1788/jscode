@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- HTTP 1.1 -->
+    <meta http-equiv="pragma" content="no-cache">
+    <!-- HTTP 1.0 -->
+    <meta http-equiv="cache-control" content="no-cache">
+    <!-- Prevent caching at the proxy server -->
+    <meta http-equiv="expires" content="0">
+    <title>授课系统</title>
+    <link rel="shortcut" href="static/ico/yjt.ico" type="image/x-icon"/>
+    <link rel="icon" href="static/ico/yjt.ico" type="image/x-icon"/>
+    <link rel="bookmark"  href="static/ico/yjt.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/res/static/common/theme/blue/elementui/index.css" />  
+  </head>
+  <body >
+    <div id="app"></div>
+    <script>
+function loadScript(src, callbackfn) {
+  var script = document.createElement('script');
+  script.async = "async";
+  script.src = src;
+    if (script.readyState){//IE 
+      script.onreadystatechange = function(){
+        if (script.readyState == "loaded" || script.readyState == "complete"){ 
+          script.onreadystatechange = null; 
+          callbackfn(); 
+        }
+      };
+    } else { //Others: Firefox, Safari, Chrome, and Opera 
+      script.onload = function(){ 
+        callbackfn(); 
+    };
+  } 
+  var inscript=document.getElementsByTagName("head")[0].appendChild( script );
+}
+//统计用授课系统标志 
+var PV_SYS_CODE="tls";
+var __VAE__ = null;
+loadScript("/node/vfsapi/pv/bp/vcom-analytics-sdk.js",function(){
+    try{
+    __VAE__ = window.__VAE__;
+    __VAE__.setPlatform(PV_SYS_CODE);
+    //document.body.addEventListener('click', __VAE__.clickEvent, false); //捕获页面全部点击进行分析
+    }catch(e){
+			console.log("统计方法异常！");
+    }
+});
+    </script>
+        <script src="static/index.js"></script>
+        <script src="static/security.js" ></script>
+        <script src="/res/static/common/js/vue.js"></script>
+        <script src="/res/static/common/js/vuex.js"></script>
+        <script src="/res/static/common/js/vue-router.js"></script>
+        <script src="/res/static/common/js/elementui/index.js"></script>   
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>对号</title>
+    <desc>Created with Sketch.</desc>
+    <g id="对号" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(25.000000, 20.000000)">
+            <circle id="椭圆形" stroke="#303030" stroke-width="10" cx="80" cy="80" r="80"></circle>
+            <path d="M70.4605931,122 C70.4605931,122 83.3737643,97.6557688 98.2324338,76.5893271 C109.699706,60.336216 124,46.1029319 124,46.1029319 L121.020037,38 C121.020037,38 104.057173,49.5165577 90.3211328,63.6435351 C76.3793748,77.97722 65.6703179,94.9626661 65.6703179,94.9626661 L44.6107401,75.6916262 L36,84.6450116 L70.4605931,122 Z" id="路径" fill="#303030" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>警告</title>
+    <desc>Created with Sketch.</desc>
+    <g id="警告" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(25.000000, 20.000000)">
+            <circle id="椭圆形" stroke="#303030" stroke-width="10" cx="80" cy="80" r="80"></circle>
+            <path d="M76.0001914,40 L84.2542243,40 C87.5679328,40 90.2542243,42.6862915 90.2542243,46 C90.2542243,46.1205526 90.2505911,46.2410778 90.2433296,46.3614115 L87.1272079,98 L73.1272079,98 L70.0110862,46.3614115 C69.8114841,43.05372 72.3310884,40.2104968 75.6387799,40.0108947 C75.7591136,40.0036332 75.8796388,40 76.0001914,40 Z M72.6272079,105 L86.6272079,105 L86.6272079,120 L72.6272079,120 L72.6272079,105 Z" id="形状结合" fill="#303030"></path>
+        </g>
+    </g>
+</svg>

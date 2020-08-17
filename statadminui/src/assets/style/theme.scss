@@ -1,0 +1,27 @@
+$themes: (
+        // 默认主题
+        default: (
+                color-barkcgournd: scale_color(#489BEF, $lightness: 90%),
+                color-primary: #1183fb,
+                color-primary-dark: #2362B7,
+                color-primary-text-light: #C8DDFA,
+                color-text-default: #666,
+                color-success: #23D3B0,
+                color-success-dark: #0BB694,
+                color:#1183fb,
+        )
+);
+
+@mixin themeify {
+  @each $theme-name, $theme-map in $themes {
+    $theme-map: $theme-map !global;
+    [data-theme=#{$theme-name}] & {
+      @content;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key)
+}
+

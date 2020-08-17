@@ -1,0 +1,60 @@
+
+a,:hover{
+  -webkit-transition: 0.25s, background-color 0.25s;
+  -moz-transition: 0.25s, background-color 0.25s;
+  -ms-transition: 0.25s, background-color 0.25s;
+  -o-transition: 0.25s, background-color 0.25s;
+  transition: 0.25s, background-color 0.25s;
+}
+
+body{ font-family:Microsoft YaHei !important; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+.el-header{ height: 50px !important; background:#1183fb linear-gradient(-90deg,#0a48d1 0,#1183fb 100%) !important; }
+.el-main{padding:0 !important;}
+.el-input__inner{ height: 36px; }
+.el-input__icon{ line-height: 38px; }
+/* .vcom-form-item{ padding:5px !important; } */
+
+
+.el-container{ background-color: #efefef !important; }
+.search-panel.vcom-panel{ background-color: #fff !important; }
+
+.vcom-button:hover{ opacity: .8; }
+
+.el-table--border th{ color:rgba(0,0,0,.6) !important; background-color: #f4f4f4;} /* thead加背景色 */
+.el-table--border th:first-child .cell, .el-table--border td:first-child .cell {padding-left:25px;} /* checkbox右移 */
+.el-input__inner::placeholder{ color:rgba(0,0,0,.5); } /*表单默认字色微调*/
+
+
+.el-table__empty-block{
+  text-align: center;
+  margin: 0 auto;
+}
+.el-table{
+  margin: 2px;
+}
+.el-table--border th{
+  color: #000;
+  font-size: 14px;
+  border-right: 0;
+}
+
+.el-table--border td{
+  color: #666;
+  font-size: 14px;
+  border-right: 0;
+}
+
+.el-table tr.el-table__row--disabled {
+  background-color: #fbfbfb;
+}
+.el-table tr.el-table__row--disabled td {
+  color: #999;
+}
+.el-textarea__inner{
+  font-family: Microsoft YaHei UI, Microsoft YaHei, serif;
+}
+.yj-select {
+  padding: 0;
+  line-height: 38px;
+  display: inline-block;
+}

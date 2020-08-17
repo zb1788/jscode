@@ -1,0 +1,88 @@
+i.right {
+    -webkit-mask: url(./svg/right.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/right.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.brush {
+    -webkit-mask: url(./svg/brush.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/brush.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.download {
+    -webkit-mask: url(./svg/download.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/download.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.lock {
+    -webkit-mask: url(./svg/lock.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/lock.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.news {
+    -webkit-mask: url(./svg/news.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/news.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.share {
+    -webkit-mask: url(./svg/share.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/share.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.upload {
+    -webkit-mask: url(./svg/upload.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/upload.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.warning {
+    -webkit-mask: url(./svg/warning.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/warning.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.not {
+    -webkit-mask: url(./svg/not.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/not.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.unlinked {
+    -webkit-mask: url(./svg/unlinked.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/unlinked.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }
+  i.linked {
+    -webkit-mask: url(./svg/linked.svg) no-repeat 0 0/100% 100%;
+    mask: url(./svg/linked.svg) no-repeat 0 0/100% 100%;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    vertical-align: middle;
+  }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>root</title>
+    <desc>Created with Sketch.</desc>
+    <g id="root" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(10.000795, 20.000000)" fill-rule="nonzero">
+            <path d="M0,130 L0,0 L91.2054402,0 C103.799571,0 114,9.84486874 114,22 L166.581184,22 C173.98837,22 180,28.0254047 180,35.4495641 L180,130 L0,130 Z" id="路径" fill="#2A5082"></path>
+            <polygon id="路径" fill="#FFFFFF" points="21.9992047 101 21.9992047 33 157.999205 33 157.999205 101 21.9992047 101"></polygon>
+            <path d="M180,145.964132 L180,57.3972711 C180,51.1138114 174.953773,46 168.753355,46 L11.2466448,46 C5.04622726,46 0,51.1138114 0,57.3972711 L0,145.936931 C0,153.689252 6.20041754,159.999912 13.877125,159.999912 L166.149717,159.999912 C173.799582,160.027114 180,153.716453 180,145.964132 L180,145.964132 Z" id="路径" fill="#A3D4FF"></path>
+        </g>
+    </g>
+</svg>

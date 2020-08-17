@@ -1,0 +1,128 @@
+.login-box{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  font-size: 14px;
+  background:url("../../images/login/login-bg.png") no-repeat;
+  background-size: cover;
+  .content-box{
+    width: 1000px;
+    height: 600px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -500px;
+    margin-top: -300px;
+    background-color: #fff;
+    .img-box{
+      width: 462px;
+      height: 474px;
+      margin-top: 72px;
+      margin-left: 22px;
+      float: left;
+      img{
+        width: 462px;
+        height: 474px;
+      }
+    }
+    .operation-box{
+      width: 516px;
+      height: 474px;
+      float: left;
+      margin: 72px auto 0;
+      .oper-head{
+        width: 100%;
+        height: 124px;
+        line-height: 144px;
+        color: #666;
+        font-weight: 900;
+        font-size: 24px;
+        text-align: center;
+      }
+      .oper-input{
+        position: relative;
+        width: 280px;
+        height: 330px;
+        margin: 0 auto;
+        text-align: center;
+        .userstyle{
+          color: #666;
+          margin-bottom: 15px;
+          .el-icon-s-custom{
+            font-size: 24px;
+            margin-top: 6px;
+          }
+        }
+        .passstyle{
+          color: #999;
+          .el-icon-lock{
+            font-size: 24px;
+            margin-top: 6px;
+          }
+        }
+        .slide-top{
+          margin-top: 15px;
+        }
+        .slideShow{
+         display: none;
+        }
+        .mar-top{
+          margin-top: 15px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+.verification{
+  height: 32px;
+  margin-top: 16px;
+  width: 100%;
+  .el-col-21{
+    background-color: #7dc651;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+  }
+  .el-col-3{
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #7dc651;
+    text-align: center;
+    border: 1px solid #c3c3c3;
+  }
+}
+.sliderstyle{
+  position: absolute;
+  width: 200px;
+  left: 60px;
+  color: #666;
+  top: 124px;
+}
+.oper-input .el-slider__button-wrapper{
+  width: 50px;
+  height: 30px;
+  top: 0;
+}
+.oper-input .el-slider__button{
+  width: 48px;
+  height: 28px;
+  background: #fff;
+  border: 1px solid #c3c3c3;
+  border-radius: 0;
+}
+.oper-input .el-slider__runway{
+  height: 30px;
+  background-color:#e8e8e8;
+}
+.oper-input .el-slider__bar{
+  height: 30px;
+  background-color: #7dc651;
+}

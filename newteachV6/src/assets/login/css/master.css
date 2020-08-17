@@ -1,0 +1,149 @@
+.blueBg{height: 100vh; 	 
+		background: -webkit-radial-gradient(circle closest-corner,#65d7ff,#1f6aff); 
+        background: -o-radial-gradient(circle closest-corner,#65d7ff,#1f6aff); 
+        background: -moz-radial-gradient(circle closest-corner,#65d7ff,#1f6aff); 
+	    background:radial-gradient(circle closest-corner,#65d7ff,#1f6aff);
+		position: relative;
+}
+.closeSk{position: absolute; right: 1vw; bottom: 2vh; width:6vh;  height: 6vh; line-height: 6vh; text-align: center; z-index: 999; border-radius: 3vh; 
+ background: -webkit-linear-gradient(180deg, #fd36360, #ff6600); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(180deg, #fd3636, #ff6600); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(180deg, #fd3636, #ff6600); /* Firefox 3.6 - 15 */
+  background: linear-gradient(180deg, #fd3636, #ff6600); /* 标准的语法 */}
+.closeSk i{font-size: 2rem;  color: #fff;   line-height:6vh; }
+
+.topLogo{position: absolute; top: 2vh; left: 1vw; }
+.topLogo span{ display: inline-block; overflow: hidden;}
+.topLogo span img{ width: 100%; height: auto;  overflow: hidden;}
+.topLogo .logo{width: 7.8vw;}
+.topLogo .logoTit{width: 14vw; }
+
+.leftBg{position: absolute; left: 12vw; top: 19vh; width:36vw;  height:60vh; }
+.leftBg img{ width: 100%; height:auto; }
+.rightLoginBox{
+    position: absolute;
+    right: 21vw;
+    top: 14vh;
+    width:23vw;
+	height: 61vh;
+    padding: 2vw;
+    background: #fff;
+    border-radius: 0.625rem;
+    box-shadow: 0 5px 15px rgba(31,84,138,.5);
+	opacity: .98;
+	z-index: 999;
+}
+.tabLogin{ position: absolute;
+    right: 0;  top: 0; width: 6.25rem; height: 6.25rem; }
+.tabLogin .tlBg{display: none; text-align: right; }
+.tabLogin .tlBg a{display: block; text-decoration: none;}
+.tabLogin .tlBg.select{ display: block;}
+.tabLogin .tlBg .iconfont{font-size: 4rem; color: #409eff; margin: 2px;}
+.smLogin{margin:-2rem; border-radius: 0.625rem; text-align: center;}
+.smLogin h1{font-size: 1.5rem; padding-top: 2vh;}
+.smLogin h4{font-size: 0.8rem; line-height: 0.8rem;}
+.smLogin .ma{margin-top:2vh;display: flex;justify-content: center;text-align: center;width:100%;height:100%;}
+.smLogin #flushdiv{padding-top:7vw;width:19vw;height:13vw;margin-top:2vh;background-color: #eaeaea}
+.smLogin .ma a{cursor:pointer}
+.wuJlu{width: 100%; text-align: center; padding: 5px; font-size: 16px; color: #999;}
+.rightLoginFill{
+    position: relative;
+    padding-top: 3vh;
+}
+.rightLoginFill .el-input{
+  margin-bottom: 3vh;
+  }
+.rightLoginFill .el-input input{height: 6vh; font-size: 1rem; }
+.rightLoginFill .el-input__icon{ font-size: 1.5rem; color: #70affc; line-height:  6vh;}
+.rightLoginFill .el-input--prefix .el-input__inner{border-width:2px; padding-left: 2.7rem;}
+.rightLoginFill .el-input__prefix{left: 15px;}
+.rightLoginFill .el-checkbox__label{font-size: 0.935rem;}
+.tpiconBg{width:4.5vw; height: 4.5vw; line-height: 4.5vw; margin: auto; text-align: center; color: #c3c5cc; font-size: 2.5vw; background:#ebeef5;    border: 2px solid #ebeef5; border-radius: 50%;  -webkit-box-shadow: 0 5px 8px rgba(0,0,0,0.1);
+	box-shadow: 0 5px 8px rgba(0,0,0,0.1);}
+.tpiconBg img{ width: 100%; height:100%; border-radius: 50%;  margin: 0vh; }
+
+.rightLoginBox #signup_button{
+    display: block;
+	width: 100%;
+    font-size: 1.3rem;
+    color: #ffffff!important;
+    line-height: 3.7vh;
+    background: #409eff;
+	box-shadow: 0 5px 20px rgba(64,158,255,0.6);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 2vh;
+	margin-bottom: 3vh;
+}
+.rightLoginBox #signup_button:hover{
+    color: #ffffff!important;
+    background: #409eff;
+}
+.teUsers{  margin: 2vh -1.5vw 0 -1.5vw; height: 11vh; position: relative; } 
+.teUsers .tuL{position: absolute; left: 0; top: 40%; }
+.teUsers a{cursor:default}
+.teUsers .select a{cursor:pointer}
+.teUsers .tuC{padding: 1.5rem 1.75rem;}
+.teUsers .tuR{position: absolute; right:0; top: 40%; }
+.teUsers .tuL span,.teUsers .tuR span{font-size: 2rem; color: #ebeef2; }
+.teUsers .tuL.select span,.teUsers .tuR.select span{font-size: 2rem; color: #409eff; }
+.teUsers a{text-decoration: none;}
+
+.teUsers .tuC ul li{float: left; width: 25%; text-align: center; position: relative; }
+.teUsers .tuC ul li img{border-radius: 50%; width: 5vh; height: 5vh;}
+.teUsers .tuC ul li p{font-size:1.5vh;line-height: 3vh; text-align: center;color:#555;overflow:hidden; word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;}
+.bottomBg{position: absolute; bottom:0; height:25vh; width: 100vw;  z-index: 2;	 
+	/* 	background: -webkit-radial-gradient(circle #5ecbff,#1c65ff); 
+        background: -o-radial-gradient(circle #5ecbff,#1c65ff); 
+        background: -moz-radial-gradient(circle #5ecbff,#1c65ff); */
+	   background:  url(../images/bottombg-4k.png) bottom no-repeat;
+		 background-size:100% 100%;		 }
+.gongJu{ width: 80vw; margin: 0 auto; padding: 0.5vw; text-align: center; display: flex;  justify-content: center;}
+.gongJu ul{ margin-top: 2.5vh;}
+.gongJu ul li{ float: left; text-align: center; margin: 0 1.5vw;}
+.gongJu ul li .iconBg{width: 4.1vw; height: 4.1vw; margin: auto; line-height: 4.1vw; text-align: center; background: #89c1ff; border-radius: 50%; -webkit-box-shadow: 0 2px 5px rgba(37,105,176,0.7);
+	box-shadow: 0 2px 5px rgba(37,105,176,0.7);}
+.gongJu ul li .iconBg span,.gongJu ul li .iconBg i{color: #333; font-size: 1.7rem; line-height: 4.1vw;}
+.gongJu ul li:hover .iconBg{background: #f3db54; -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.9);
+	box-shadow: 0 5px 10px rgba(0,0,0,0.9);}
+.gongJu ul li p{ color: #fff; font-size: 0.8rem; text-align: center; margin: auto; line-height: 4vh; }
+
+
+.banQuan{position: absolute; bottom: 0;  text-align: center; clear: both; width: 100%;  z-index: 3;}
+.banQuan span{display: inline-block;}
+.banQuan .bQlogo{ width: 7.5vw;   }
+.banQuan .bQlogo img{width:auto; height:5.8vh; overflow: hidden; margin-top: -3vh; }
+.banQuan .bQline{ width: 0.2vw; height: 4vh; background: #fff; opacity: .2; margin-right: 0.5vw;}
+.banQuan .bQdesc{ color: #fff; font-size: 0.8rem;}
+.banQuan .bQdesc p{color: #fff; line-height: 3vh; text-align: left;}
+.logoQuan{width: 22vw;}
+.logoQuan img{width: 100%; height: auto;}
+
+
+@media screen and (max-width: 1400px)  {
+	.gongJu ul{ margin-top: 4.5vh;}
+	.gongJu ul li .iconBg span,.gongJu ul li .iconBg i{ font-size: 1.5rem;}
+	.gongJu ul li:hover .iconBg i{font-size: 1.5rem; }
+	.rightLoginBox{
+	    right: 15vw;
+	    width:26vw;
+		top:21vh;
+		/*height: 58vh;*/
+	}
+	.rightLoginBox #signup_button{
+	    line-height: 3vh;
+		margin-bottom: 1vh!important; font-size: 1rem;
+	}
+	.gongJu ul li p{  font-size: 0.8rem;  line-height: 5vh; }
+	.gongJu ul li:hover p{font-size: 0.9rem;  line-height: 5vh;}
+	.banQuan .bQlogo{ width: 10.5vw;   }
+	.banQuan .bQdesc{font-size: 0.8rem;}
+	.banQuan .bQline{  height: 4vh; margin-right: 0.2vw; }
+	.teUsers .tuC ul li p{ font-size: 12px;width:50px;overflow:hidden; word-break:keep-all;white-space:nowrap;text-overflow:ellipsis;}
+	.rightLoginFill .el-input input{font-size: 0.8rem;}
+	.rightLoginFill .el-input__icon{font-size: 1.2rem;}
+	.tabLogin .tlBg .iconfont{font-size: 3.5rem;}
+}
+a.del,a.del:visited { color:#999; border-radius: 50%;   width:1.2rem; height:1.2rem; text-align: center;  display:block; position:absolute; top:-13px; left:0;}
+a.del:hover {color:#f56c6c; }
+a.del .iconfont{font-size:1rem!important; line-height: 1.4rem;}
