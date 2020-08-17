@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>汉字 writer</title>
+	<style>
+	.inline-demo{
+	border: 1px solid #CCC;
+    width: 102px;
+    height: 102px;
+    margin-right: 5px;
+    flex-shrink: 0;
+	}
+	</style>
+</head>
+
+<body>
+
+	<div id="character-target-div"></div>
+	<button id="animate-button">动画</button>
+	
+	<div id="target"></div>
+	<div id="target1"></div>
+	
+	<br/>
+	
+	<div class="inline-demo">
+	<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" id="grid-background-target">
+	  <line x1="0" y1="0" x2="100" y2="100" stroke="#DDD" />
+	  <line x1="100" y1="0" x2="0" y2="100" stroke="#DDD" />
+	  <line x1="50" y1="0" x2="50" y2="100" stroke="#DDD" />
+	  <line x1="0" y1="50" x2="100" y2="50" stroke="#DDD" />
+	</svg>
+	</div>
+<script src="./hanzi-writer.min.js"></script>
+<script>
+// var writer = HanziWriter.create('character-target-div', '我', {
+//   width: 100,
+//   height: 100,
+//   padding: 5,
+//   strokeColor: '#EE00FF' // pink
+// });
+
+
+
+
+var writer = HanziWriter.loadCharacterData('是').then(function(charData) {
+  var target = document.getElementById('target');
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.style.width = '150px';
+  svg.style.height = '150px';
+  target.appendChild(svg);
+  var group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+  // set the transform property on the g element so the character renders at 150x150
+  var transformData = HanziWriter.getScalingTransform(150, 150);
+  group.setAttributeNS(null, 'transform', transformData.transform);
+  svg.appendChild(group);
+
+  var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttributeNS(null, 'd', charData.strokes[0]);
+    // style the character paths
+    path.style.fill = '#555';
+    group.appendChild(path);
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttributeNS(null, 'd', charData.strokes[1]);
+    // style the character paths
+    path.style.fill = '#555';
+    group.appendChild(path);
+  // charData.strokes.forEach(function(strokePath) {
+  //   var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  //   path.setAttributeNS(null, 'd', strokePath);
+  //   // style the character paths
+  //   path.style.fill = '#555';
+  //   group.appendChild(path);
+  // });
+});
+          
+		  
+function renderFanningStrokes(target, strokes) {
+  var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.style.width = '75px';
+  svg.style.height = '75px';
+  svg.style.border = '1px solid #EEE'
+  svg.style.marginRight = '3px'
+  target.appendChild(svg);
+  var group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+  // set the transform property on the g element so the character renders at 75x75
+  var transformData = HanziWriter.getScalingTransform(75, 75);
+  group.setAttributeNS(null, 'transform', transformData.transform);
+  svg.appendChild(group);
+
+  strokes.forEach(function(strokePath) {
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttributeNS(null, 'd', strokePath);
+    // style the character paths
+    path.style.fill = '#555';
+    group.appendChild(path);
+  });
+}
+
+// var writer = HanziWriter.loadCharacterData('是').then(function(charData) {
+//   var target = document.getElementById('target1');
+//   for (var i = 0; i < charData.strokes.length; i++) {
+//     var strokesPortion = charData.strokes.slice(0, i + 1);
+//     renderFanningStrokes(target, strokesPortion);
+//   }
+// });
+
+
+document.getElementById('animate-button').addEventListener('click', function() {
+  // writer.animateCharacter();
+});
+
+// var writer = HanziWriter.create('grid-background-target', '酷', {
+//   width: 100,
+//   height: 100,
+//   padding: 5,
+// });
+</script>
+</body>
+</html>

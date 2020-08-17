@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./CryptoJS-master/rollups/aes.js"></script>
+<script src="./CryptoJS-master/components/mode-ecb.js"></script>
+<script src="./CryptoJS-master/components/pad-nopadding.js"></script>
+<script>
+
+var key = 'cee60757342c441997b2e5ed54c4028d';
+//加密
+var tar = encrypt("Hello World",key);
+console.log(tar);
+//解密
+var bb = decrypt(tar,key);
+console.log(bb);
+// AES加密
+function encrypt(word,key) {
+	var wordarr = CryptoJS.enc.Utf8.parse(word);
+	var keyarr = CryptoJS.enc.Utf8.parse(key);
+	
+    var encrypted = CryptoJS.AES.encrypt(wordarr, keyarr, {
+        mode: CryptoJS.mode.ECB, 
+        padding: CryptoJS.pad.Pkcs7
+    });
+    return encrypted.toString();
+}
+
+// AES解密
+function decrypt(word,keyStr) {
+ var key = CryptoJS.enc.Utf8.parse(keyStr);
+ var decrypt = CryptoJS.AES.decrypt(word, key, {
+ mode: CryptoJS.mode.ECB,
+ padding: CryptoJS.pad.Pkcs7
+ });
+ return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+ 
+}
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

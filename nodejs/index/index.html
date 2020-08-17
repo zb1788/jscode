@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1" />
+<meta charset="utf-8">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="./screenLog.js"></script>
+
+</head>
+
+<body>
+
+<select id="select">
+
+<option>1</option>
+<option>2</option>
+<option>3</option>
+</select>
+  <form action="5.家用电器商品分类-table.html" method="post" onsubmit="return false">
+            <input type="text" id="tes1t" onblur="test()" />
+    
+        </form>
+<a id="aa" onclick="getval();">个发发</a>
+
+<form action="http://localhost/demo/upload/single" enctype="multipart/form-data" method="post">
+<input type="file" name="file"/>
+<input type="submit" value="submit"/>
+</form>
+
+<script>
+//screenLog.init();
+var cls = "147098596789321647";
+
+for(var i=0;i<30;i++){
+	//console.log('aa:'+i);
+}
+
+
+			var url = '/tt/sso/verifyAuthInfo?appFlg=PLS&loginUsertype=teacher&encodeP=4&username=39aeb23cd44bf6a053ab5ea87bb5fdcd&pwd=3dbe00a167653a1aaee01d93e77e730e&pwdRsa=0cb95dd9ad0afa6a70c84fe6da707a51423bee96c991a475a625510a1e24ff318fad55d5738bdca8e89c3cadabb6be7832691141297c5b2ca4f0d0c2e18382fb26ead810f0ea8ed12664a308397738f849106138bfa9b7369897c7b092d15a81f245d738d2fde9ecc04a669e32fc30c11791b1f086a4c70ee4614a6fcc9f0da6&mac=6C-4B-90-78-9B-E7';
+			$.ajax({
+				type : "GET",
+				url : url,
+				error : function(request) {
+
+				},
+				success : function(data) {
+
+				}
+			});
+
+
+
+var arr = [];
+var obj = {};
+obj.a = 1;
+obj.b ="035101";
+var obj1 = {};
+obj1.a = 2;
+obj1.b ="03.51.02";
+
+arr.push(obj);
+arr.push(obj1);
+
+
+var t = arr.filter(item => item.b.indexOf("0351") != -1)
+console.log(t);
+
+
+console.log("03.51.01".indexOf("03.51"));
+/**
+
+$.ajax({
+        url: 'http://tmstest.yjt361.com/tms/clientInterface/bindStudentSmartPaper.do?studentNumber=41010210015630&classId=143995447818277275&schoolId=4101029999&smartPaperMac=00-1B-10-42-51-A3&teachComputerMac=9C-54-CA-97-94-11&ut=1b38dd1b4bb9e4e6e2cfccba642f4276e20281e4c90bdbbd689ef6e188a178acc7e2b7550c04d9ee&rand=0.8989721073632635&time=32&jsoncallback=jQuery17202326141858689404_1551865208024&_=1551865472760',
+		data: {'action':132,'ran':'dsafas'},
+        dataType: "json",
+        type: 'get',
+		time:5000,
+        success: function (data,textStatus) {   //成功后回调
+			console.log(data);
+						console.log(textStatus);
+        },
+        error: function(e){    //失败后回调
+			console.log('error');
+			console.log(e);
+        }
+})
+*/
+</script>
+
+
+
+
+</body>
+</html>
+

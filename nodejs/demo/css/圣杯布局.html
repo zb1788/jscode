@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	
+	#header,#footer{
+		height:20px;
+		text-align:center;
+		border:1ps solid deeppink;
+		background:gray;
+	}
+	
+	#container{
+		padding:0 200px;
+	}
+	
+	#container .middle{
+		float:left;
+		width:100%;
+		background:pink;
+	}
+	#container .left{
+		position:relative;
+		left:-200px;
+		margin-left:-100%;
+		float:left;
+		width:200px;
+		background:yellow;
+	}
+	#container .right{
+		position:relative;
+		right:-200px;
+		margin-left:-200px;
+		float:left;
+		width:200px;
+		background:yellow;
+	}	
+	
+	.clearfix{
+		*zoom:1;
+	}
+	.clearfix:after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="header">header</div>
+	<div id="container" class="clearfix">
+		<div class="middle">middle</div>
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<div id="footer">footer</div>
+	
+	<script>
+	console.log(isIE(10));
+	function isIE(version){
+		var b = document.createElement("b");
+		b.innerHTML="<!--[if IE "+version+"]><i></i><![endif]-->";
+		return b.getElementsByTagName("i").length==1;
+	}
+	
+	</script>
+</body>
+</html>
