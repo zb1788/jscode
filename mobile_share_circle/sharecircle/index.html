@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>shares</title>
+  </head>
+  <body>
+    <script>
+      var json = {"backUrl":"","title": "shares","rightShow": true,"rightIcon": "","rightTxt": "","rightUrl": "","showNextTitle": false,"showTitleBar":false,"nextTitle": ""};
+      try{
+        UXinJSInterface.resetWebTitle(JSON.stringify(json));
+      }catch(e){
+        
+      }
+      window.onload=function(){
+        var wrapperHeight = document.documentElement.clientHeight - 40;
+        document.getElementById("wrapper").style.height= wrapperHeight + 'px';
+      }
+
+
+    </script>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

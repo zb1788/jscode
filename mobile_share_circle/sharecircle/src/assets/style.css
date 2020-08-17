@@ -1,0 +1,219 @@
+body{
+    background-color: #fff;
+    font-family:Helvetica;
+    font-size: 0.7rem;
+}
+ul li{
+  list-style-type:none;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.paddingCommon{
+    padding: 3px 10px;
+}
+.xdriver{
+    border: 0.5px solid #b8bbbf;
+    margin-bottom: 5px;
+}
+
+.backColor{
+    background-color: f2f2f2;
+}
+
+.fontGray{
+  color: #999999;
+font-size:13px;
+}
+
+.mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+.banner{
+    padding: 20px 0 0 0;
+    height:120px;
+/*    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545663295138&di=924fb552b6632df062d844a2c74422e0&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01721c556876420000012716c23d3f.jpg%401280w_1l_2o_100sh.jpg) 0 -40px;
+ */ 
+background:url(img/top.jpg) 0 -45px #000;
+color: #fff;
+    font-size: 1.2rem;
+		position: relative;
+		overflow: hidden;
+		    background-size: cover;
+  }
+ .banner svg {position: absolute; bottom:0; opacity: 0.5;}
+  .ques-card-bul{
+    background-color: #397bee;
+    background-image: -webkit-radial-gradient(50% -45%,circle,#53a7f5,#397bee);
+    background-image: radial-gradient(circle at 50% -45%,#53a7f5,#397bee);
+
+}
+	.banner::after {
+  content: '';
+  width: 140%;
+  height: 250px;
+  position: absolute;
+  left: -20%;
+  bottom: -200px;
+  z-index: 3;
+  border-radius: 50% 50% 0 0;
+  background: #effbff;
+}
+
+	.vux-header{padding:0; 
+/* 	background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545663295138&di=924fb552b6632df062d844a2c74422e0&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01721c556876420000012716c23d3f.jpg%401280w_1l_2o_100sh.jpg) ; 
+ */
+background:url(img/top.jpg); 
+	background-size:cover;
+	    box-shadow: none;
+    border: 0;
+
+/*    background-color: #397bee;
+    background-image: -webkit-radial-gradient(50% -45%,circle,#53a7f5,#397bee);
+    background-image: radial-gradient(circle at 50% -45%,#53a7f5,#397bee); */
+
+}
+  .banner-left{
+    text-align: center;
+  }
+  .banner-right{
+    text-align: left;
+    font-size: 0.8rem;
+  }
+
+  .info{
+    padding-top: 10px;
+  }
+
+
+
+  .blockdiv{
+    display: block;
+  }
+  .blueFont{
+    color:#3cb0e0;
+    FONT-WEIGHT: bold;
+  }
+  .commentInfo{
+      padding: 3px 10px;
+  }
+.vux-checker-box{font-size: 12px;}
+  .checkbox-item {
+    border: 1px solid #ececec;
+    padding: 2px 5px;
+    margin: 3px 10px 3px 0;
+    font-size:0.7rem;
+    color: #777;
+  }
+	
+.checkbox-item-selected{ 
+	color: #ffa656;
+    background: #fffef2;
+    border-color: #ffeda4;}
+.grafont {color: #aaa;}
+
+  .wordinfo{
+    text-align: left;
+  }
+  
+  .username{
+    color:#868686;
+/*    font-weight: bold; */
+    font-size: 13px;
+  }
+
+  .vux-close {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .dialog-demo{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 5000;
+  }
+
+.follow{
+  border-radius: 20px;
+  font-size: 0.6rem;
+  padding: 3px 3px;
+  border: solid 1px #efefef;
+    color: #aaa;
+		margin-top:-5px!important;
+		margin-bottom: 5px!important;
+		vertical-align: middle;
+}
+.nofollow{
+  background-color: #fff;
+  color: #aaa;
+  border-radius: 20px;
+  font-size: 0.6rem;
+  padding: 3px 3px;
+  border: solid 1px #efefef;  
+}
+
+/*20181220add*/
+.vux-header .vux-header-left .left-arrow:before,.vux-header-left ,.vux-header .vux-header-left a {color: #fff!important; border-color:#fff!important}
+.jieduan {    white-space: nowrap;  overflow: hidden;    text-overflow: ellipsis;}
+.mtleft {font-size: 30px;}
+.headphoto {/*width:96%; height: 80%;*/ border-radius: 100px!important;}
+.weui-btn_mini { font-size: 12px; line-height: 2.4em!important; height: 2.3em!important;}
+.pad010 {padding: 0 10px;}
+.xdriver {border:0 ; border-bottom:solid 1px #efefef; margin: 0;}
+.follow, .nofollow { line-height: 2.4em!important; height: 2em!important; overflow: hidden;  font-size: 0.8em!imporant; padding: 4px 10px 2px; vertical-align: middle;}
+.texth6 { color:#888; font-size: 1em;}
+.textp {color: #555; padding:13px 10px 13px 0; font-size: 14px;}
+.fenx {line-height: 40px; color:#555;}
+.fenx i {font-size: 16px; color: #888; vertical-align: middle; margin-right: 5px;}
+.yiny {color: #666; margin-bottom: 5px; font-size: 0.8rem;}
+.yiny i {color: #666; margin-right: 5px;}
+.yiny span {color: #999;}
+.padb10 {padding-bottom: 10px;}
+.pad10 {padding:10px}
+.mb5 {margin-bottom: 5px;}
+.weui-panel {margin-right: 10px;}
+.weui-panel:after,.weui-panel:before {content: none!important;}
+.table {display: table; table-layout: fixed; width: 100%;}
+.table-cell{display: table-cell; vertical-align: top;}
+
+.vux-tab .vux-tab-item{color: #999!important;}
+.vux-tab .vux-tab-item.vux-tab-selected {  
+ color: #333!important;}
+ .vux-tab-ink-bar{background-color:#f88e26!important;}
+.bfont {font-size:14px}
+.hr {height: 5px ; background: #fafafa; width: 100%; border-bottom:solid 1px #efefef;}
+.dhr { border-bottom:solid 1px #f1f1f1;}
+.inputss {border: none;     border: solid 1px #ddd;   background: #fff;   width: 100%;  margin-top: 10px;   line-height: 30px;   vertical-align: middle;}
+.dfb {border:solid 1px #ddd; background: #fafafa;width: 100%; height: 32px; line-height: 30px; margin-top:10px; color: #666; float: right; }
+.nofollow {color:#4997c5!important}
+.headphoto {border-radius:5px!important}
+.texth2 {font-size: 1.1rem; text-align: center;text-shadow: 0px 1px 2px #666;}
+.texth3 {font-size: 1em; /**opacity: 0.7;*/ text-align: center;text-shadow: 0px 1px 2px #666;}
+.myphoto {border-radius:45px;margin-left:5px; border:solid 2px #fff;    position: absolute;   top: 120px;   left: 50%;   margin-left: -2.5em!important;   width: 5em;   height: 5em; z-index: 6;}
+.line30 {line-height: 30px;}
+.bagfff{background: #fff;}
+.bagblue{background:#effbff;}
+.bagfa{background:#fafafa}
+.bagblue01{background:#ddf6fe;}
+.weui-btn:after {border: 0!important;}
+.hline {height: 2px; background:#effbff; width: 100%; display: block; position: absolute; bottom: 0; z-index: 9;}
+.clear {clear: both;}
+.padtb10 {padding:10px 0 10px 0}
+.guanggao {float: right; line-height: 2em!important; color:#999;}
+
+.bluefont {color:#4b6182;}
+.ico-edpl{height: 20px; width: 25px; background:url(img/ico.png) -55% 0; background-size: 300%; display: inline-block;}
+.ico-edyy{height: 20px; width: 25px; background:url(img/ico.png) -2% 0; background-size: 300%; display: inline-block;}
+.ico-edmore{height: 30px; width: 40px; background:url(img/ico.png) -100% 0; background-size: 300%; display: inline-block;}
+.ico-face{height: 30px; width: 30px; background:url(img/face.png) no-repeat 0 0; background-size: 100%; display: inline-block;}

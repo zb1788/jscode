@@ -1,0 +1,252 @@
+{
+    "apc":{"name":"aa","age":23},
+    "myinfo":{
+        "infoid":"111111111",
+        "userName":"刘航老师",
+        "userAccount":"1313131",
+        "headPhoto":"",
+        "schoolName": "威科姆测试学校",
+        "Comment": "哈回复哈地方啊这努力奋斗可结案放得开奥拉夫金卡路费景安两地分居奥克兰的房间辣时代峰峻案例的发射点发拉发了疯发大水",
+        "shareTime": "2018-11-12",
+        "shareArea": "共享至平台",
+        "shareNum": 13,
+        "commentNum": 43,
+        "shareList":"杨萌萌，张三，李四，王五，赵六",
+        "isMy": true,
+        "isFollow": 3,
+        "items": [{
+            "key": 1,
+            "value": "思路清晰",
+            "count":2
+        },
+        {
+            "key": 2,
+            "value": "训练设计精彩，凡达司法所阿德法",
+            "count":3
+        },
+        {
+            "key": 3,
+            "value": "素材丰富，非常棒",
+            "count":6
+        },
+        {
+            "key": 4,
+            "value": "好精彩",
+            "count":7
+        }
+        ],
+        "CommentList": [
+          {
+            "username": "张三",
+            "msg": "很棒！"
+          },
+          {
+            "username": "李四",
+            "msg": "真的很不错，我非常喜欢，已经收藏了，推荐大家都来看！"
+          },
+          {
+            "username": "王五",
+            "msg": "太棒了！点个赞，比心......"
+          }
+        ]            
+    },
+    "otherList":[{
+        "infoid":"222222222222",
+        "userName":"周杰伦老师",
+        "userAccount":"1313131",
+        "headPhoto":"",
+        "schoolName": "中国音乐学校",
+        "Comment": "乘着风游荡在蓝天",
+        "shareTime": "2018-12-12",
+        "shareArea": "共享至平台",
+        "shareNum": 6,
+        "commentNum": 123,
+        "shareList":"杨萌萌，张三，李四，王五，赵六",
+        "isMy": false,
+        "isFollow": 1,
+        "items": [{
+            "key": 1,
+            "value": "思路清晰",
+            "count":2
+        },
+        {
+            "key": 2,
+            "value": "训练设计精彩，凡达司法所阿德法",
+            "count":3
+        },
+        {
+            "key": 3,
+            "value": "素材丰富，非常棒",
+            "count":6
+        },
+        {
+            "key": 4,
+            "value": "好精彩",
+            "count":7
+        }
+        ],
+        "CommentList": [
+          {
+            "username": "张三",
+            "msg": "很棒！"
+          },
+          {
+            "username": "李四",
+            "msg": "真的很不错，我非常喜欢，已经收藏了，推荐大家都来看！"
+          },
+          {
+            "username": "王五",
+            "msg": "太棒了！点个赞，比心......"
+          }
+        ]      
+      },{
+        "infoid":"3333333333",
+        "userName":"张三老师",
+        "userAccount":"1313131",
+        "headPhoto":"",
+        "schoolName": "外国语学校",
+        "Comment": "好大大龙虾鲁大师积分卡士大夫大福利金卡的说法案例打飞机啊打发",
+        "shareTime": "2018-11-12",
+        "shareArea": "共享至平台",
+        "shareNum": 1,
+        "commentNum": 23,
+        "shareList":"张三，李四，王五，大饼，小江，赵六",
+        "isFollow": 2,
+        "items": [{
+            "key": 1,
+            "value": "思路清晰",
+            "count":2
+        },
+        {
+            "key": 2,
+            "value": "训练设计精彩，凡达司法所阿德法",
+            "count":3
+        },
+        {
+            "key": 3,
+            "value": "素材丰富，非常棒",
+            "count":6
+        },
+        {
+            "key": 4,
+            "value": "好精彩",
+            "count":7
+        }
+        ],
+        "CommentList": [
+          {
+            "username": "张三",
+            "msg": "还可以"
+          },
+          {
+            "username": "李四",
+            "msg": "凑合着看"
+          },
+          {
+            "username": "王五",
+            "msg": "had发上来的杰拉德附近阿喀琉斯啊大家来看大发大声道发的"
+          }
+        ]      
+      },{
+        "infoid":"44444444444",
+        "userName":"李四老师",
+        "userAccount":"1313131",
+        "headPhoto":"",
+        "schoolName": "武汉学校",
+        "Comment": "武大武大武大武大武大武大武大武大武大武大",
+        "shareTime": "2018-11-12",
+        "shareArea": "共享至平台",
+        "shareNum": 1,
+        "commentNum": 23,
+        "shareList":"张三，李四，王五，大饼，小江，赵六",
+        "isFollow": 2,
+        "items": [{
+            "key": 1,
+            "value": "思路清晰",
+            "count":2
+        },
+        {
+            "key": 2,
+            "value": "训练设计精彩，凡达司法所阿德法",
+            "count":3
+        },
+        {
+            "key": 3,
+            "value": "素材丰富，非常棒",
+            "count":6
+        },
+        {
+            "key": 4,
+            "value": "好精彩",
+            "count":7
+        }
+        ],
+        "CommentList": [
+          {
+            "username": "张三",
+            "msg": "还可以"
+          },
+          {
+            "username": "李四",
+            "msg": "凑合着看"
+          },
+          {
+            "username": "王五",
+            "msg": "had发上来的杰拉德附近阿喀琉斯啊大家来看大发大声道发的"
+          }
+        ]      
+      }],
+    "shareList":{
+        "myShareClassHour": {
+            "id": "20180827133552683750062403054",
+            "userName": "3401010000010002",
+            "trueName": "秦金辉",
+            "schoolCode": "4101990001",
+            "schoolName": "陈寨一贯制学校",
+            "shareType": 2,
+            "shareSchoolCode": "4101990001",
+            "shareSysCode": "20180808150843159275815917321",
+            "shareSelfCode": "20180825134600044842339326244",
+            "shareTime": "2018-08-27 13:35:52",
+            "lastShareTime": "2018-08-27 13:35:52",
+            "shareNumber": 0,
+            "message": "共享时输入的留言",
+            "useShareClassHourList": [{
+                "id": "20181211154355427396520586376",
+                "shareClassHourId": "20180827133552683750062403054",
+                "userName": "5841218541",
+                "trueName": "引用测试教师",
+                "useTime": "2018-12-11 15:43:55",
+                "lastUseTime": "2018-12-11 15:43:55"
+            }],
+            "shareClassHourReasonList": [{
+                "id": "20181211154355427445368939227",
+                "shareClassHourId": "20180827133552683750062403054",
+                "reasonId": "111",
+                "voteId":"333333"
+            }]
+        },
+        "shareClassHourList": [{
+            "id": "20180822101052731218553942907",
+            "userName": "3401010000010032",
+            "trueName": "啦啦啦啦啦啦啦啦啦啦啦啦啦啦拉拉啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦",
+            "schoolCode": "4101990001",
+            "schoolName": "陈寨一贯制学校",
+            "shareType": 2,
+            "shareSchoolCode": "4101990001",
+            "shareSysCode": "20180808150843159275815917321",
+            "shareSelfCode": "20180817164217498479142264755",
+            "shareTime": "2018-08-22 10:10:52",
+            "lastShareTime": "2018-08-22 10:10:52",
+            "shareNumber": 232,
+            "message": "共享时输入的留言",
+            "shareClassHourReasonList": [{
+                "id": "20181211154355427409270322641",
+                "shareClassHourId": "20180822101052731218553942907",
+                "reasonId": "2222",
+                "voteId":"333333"
+            }]
+        }]
+    }
+    
+}
